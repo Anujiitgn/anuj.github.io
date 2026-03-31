@@ -1,480 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anuj P Kushwaha | Earth Scientist & Hydrologist</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink:    #0d1b2a;
-      --deep:   #112233;
-      --ocean:  #1a4a6e;
-      --teal:   #0e7c7b;
-      --sky:    #4da6c8;
-      --foam:   #a8d8e8;
-      --paper:  #f4f1eb;
-      --cream:  #faf8f3;
-      --gold:   #c5973a;
-      --dim:    #5a6a7a;
-      --rule:   rgba(26,74,110,0.15);
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --ink:#0d1b2a;--deep:#112233;--ocean:#1a4a6e;--teal:#0e7c7b;
+      --sky:#4da6c8;--foam:#a8d8e8;--paper:#f4f1eb;--cream:#faf8f3;
+      --gold:#c5973a;--dim:#5a6a7a;--rule:rgba(26,74,110,0.15);
     }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      overflow-x: hidden;
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--paper)}
+    ::-webkit-scrollbar-thumb{background:var(--ocean);border-radius:4px}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;background:rgba(244,241,235,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;letter-spacing:.04em;color:var(--ocean);text-decoration:none}
+    .nav-links{display:flex;gap:1.5rem;list-style:none}
+    .nav-links a{font-size:.73rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--ocean)}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .nav-toggle span{display:block;width:24px;height:2px;background:var(--ocean)}
+    /* HERO */
+    #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+    .hero-left{background:var(--deep);display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 6rem 5rem;position:relative}
+    .hero-left::after{content:'';position:absolute;right:-1px;top:0;bottom:0;width:60px;background:var(--cream);clip-path:polygon(100% 0,100% 100%,0 100%)}
+    .hero-eyebrow{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sky);margin-bottom:1.8rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .hero-eyebrow a{color:var(--sky);text-decoration:none;border-bottom:1px solid rgba(77,166,200,0.35);padding-bottom:1px;transition:border-color .2s}
+    .hero-eyebrow a:hover{border-color:var(--sky)}
+    .hero-eyebrow .sep{opacity:.4}
+    .hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,4.5vw,4.5rem);font-weight:300;line-height:1.05;color:#fff;margin-bottom:.4rem}
+    .hero-name em{font-style:italic;color:var(--sky)}
+    .hero-sub{font-size:.8rem;color:rgba(168,216,232,0.7);margin-bottom:1.4rem;letter-spacing:.03em}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem}
+    .tag{font-size:.67rem;font-weight:500;letter-spacing:.07em;padding:.26rem .72rem;border:1px solid rgba(77,166,200,0.38);border-radius:2px;color:var(--sky);background:rgba(77,166,200,0.07)}
+    .hero-cta{display:flex;gap:.9rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;padding:.62rem 1.3rem;font-size:.76rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .25s}
+    .btn-primary{background:var(--teal);color:#fff}.btn-primary:hover{background:#0a5f5e}
+    .btn-outline{border:1px solid rgba(255,255,255,0.28);color:#fff}.btn-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.55)}
+    /* Hero right */
+    .hero-right{display:flex;flex-direction:column;justify-content:center;padding:7rem 4rem 6rem 5rem;background:var(--cream);position:relative}
+    .hero-right::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(13,123,123,0.05) 0%,transparent 50%)}
+    .hero-right>*{position:relative}
+    .hero-profile{display:flex;align-items:center;gap:1.4rem;margin-bottom:1.8rem}
+    .hero-photo{width:88px;height:88px;border-radius:50%;border:3px solid var(--ocean);overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,var(--ocean),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:#fff}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .hero-profile-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:500;color:var(--ocean);line-height:1.2}
+    .hero-profile-sub{font-size:.76rem;color:var(--dim);margin-top:.2rem;line-height:1.5}
+    .about-body p{font-size:.86rem;line-height:1.88;color:#253545;margin-bottom:.95rem}
+    .about-body p:last-child{margin-bottom:0}
+    .hero-stats{display:flex;gap:1.4rem;margin-top:1.5rem;padding-top:1.3rem;border-top:1px solid var(--rule);flex-wrap:wrap}
+    .mini-stat .num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--ocean);line-height:1}
+    .mini-stat .lbl{font-size:.64rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:.15rem}
+    /* SECTIONS */
+    section{padding:5.5rem 0}
+    .container{max-width:1100px;margin:0 auto;padding:0 2rem}
+    .section-head{margin-bottom:2.8rem}
+    .section-label{font-family:'DM Mono',monospace;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:.6rem;margin-bottom:.55rem}
+    .section-label::after{content:'';flex:1 0 30px;height:1px;background:var(--teal);opacity:.35;max-width:60px}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.7rem);font-weight:400;color:var(--ink);line-height:1.15}
+    /* Research cards */
+    #research{background:var(--paper)}
+    .research-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.1rem}
+    .rc{border-radius:7px;overflow:hidden;border:1px solid var(--rule);background:#fff;transition:box-shadow .25s,transform .25s}
+    .rc:hover{box-shadow:0 8px 28px rgba(26,74,110,0.11);transform:translateY(-3px)}
+    .rc-top{height:68px;background:linear-gradient(135deg,var(--deep),var(--ocean));display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+    .rc-body{padding:1rem 1.2rem}
+    .rc-body h4{font-size:.86rem;font-weight:500;color:var(--ink);margin-bottom:.35rem}
+    .rc-body p{font-size:.74rem;color:var(--dim);line-height:1.6}
+    /* Skills */
+    .skills-wrap{margin-top:2.8rem}
+    .skills-wrap h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:500;color:var(--ocean);margin-bottom:1.1rem}
+    .skill-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.3rem}
+    .sg-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:.5rem}
+    .sg-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+    .sg-tag{font-size:.72rem;padding:.24rem .7rem;border-radius:3px;border:1px solid var(--rule);color:var(--ink);background:var(--cream)}
+    /* Timeline */
+    #timeline{background:var(--cream)}
+    .tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+    .tl-col h3{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:500;color:var(--ocean);margin-bottom:1.7rem}
+    .tl-col h3.sub{font-size:1.2rem;margin-top:2rem;margin-bottom:1.2rem}
+    .tl-item{position:relative;padding-left:1.5rem;margin-bottom:1.6rem;border-left:2px solid var(--rule)}
+    .tl-item::before{content:'';position:absolute;left:-5px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--teal);border:2px solid var(--cream)}
+    .tl-period{font-family:'DM Mono',monospace;font-size:.65rem;color:var(--teal);letter-spacing:.1em;margin-bottom:.18rem}
+    .tl-role{font-size:.9rem;font-weight:500;color:var(--ink);margin-bottom:.16rem}
+    .tl-org{font-size:.78rem;color:var(--ocean);margin-bottom:.35rem}
+    .tl-desc{font-size:.77rem;color:var(--dim);line-height:1.6}
+    /* Publications */
+    #publications{background:var(--paper)}
+    .pub-tabs{display:flex;border-bottom:1px solid var(--rule);margin-bottom:1.8rem}
+    .pub-tab{padding:.55rem 1.3rem;font-size:.73rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;color:var(--dim);margin-bottom:-1px;transition:all .2s}
+    .pub-tab.active{color:var(--ocean);border-bottom-color:var(--ocean)}
+    .pub-list{display:none}.pub-list.active{display:block}
+    .pub-item{display:flex;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--rule)}
+    .pub-item:last-child{border-bottom:none}
+    .pub-num{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);flex-shrink:0;width:26px;padding-top:2px;text-align:right}
+    .pub-title{font-size:.86rem;font-weight:500;color:var(--ink);line-height:1.5;margin-bottom:.3rem}
+    .pub-authors{font-size:.74rem;color:var(--dim);margin-bottom:.22rem}
+    .pub-authors strong{color:var(--ocean)}
+    .pub-journal{font-size:.72rem;color:var(--teal);font-style:italic}
+    .pub-badges{display:flex;gap:.38rem;flex-wrap:wrap;margin-top:.4rem;align-items:center}
+    .badge{font-size:.62rem;font-weight:500;padding:.16rem .48rem;border-radius:2px;background:rgba(14,124,123,0.09);color:var(--teal);border:1px solid rgba(14,124,123,0.22)}
+    .badge.gold{background:rgba(197,151,58,0.09);color:var(--gold);border-color:rgba(197,151,58,0.28)}
+    .badge.blue{background:rgba(26,74,110,0.07);color:var(--ocean);border-color:rgba(26,74,110,0.18)}
+    .pub-pdf{font-size:.68rem;font-weight:500;color:var(--sky);text-decoration:none;border:1px solid rgba(77,166,200,0.38);padding:.16rem .48rem;border-radius:2px;transition:all .2s}
+    .pub-pdf:hover{background:var(--sky);color:#fff}
+    /* Awards */
+    #awards{background:var(--cream)}
+    .aw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.95rem}
+    .aw-card{padding:1.1rem 1.3rem;background:#fff;border:1px solid var(--rule);border-radius:6px;display:flex;gap:.85rem;align-items:flex-start;transition:box-shadow .25s,transform .25s}
+    .aw-card:hover{box-shadow:0 4px 18px rgba(26,74,110,0.09);transform:translateY(-2px)}
+    .aw-icon{font-size:1.25rem;flex-shrink:0}
+    .aw-text p{font-size:.8rem;font-weight:500;color:var(--ink);line-height:1.5}
+    .aw-text small{font-size:.68rem;color:var(--dim)}
+    /* Projects */
+    #projects{background:var(--paper)}
+    .proj-item{padding:1.1rem 1.3rem;background:#fff;border:1px solid var(--rule);border-radius:6px;margin-bottom:.75rem}
+    .proj-item h4{font-size:.86rem;font-weight:500;color:var(--ink);margin-bottom:.28rem}
+    .proj-item p{font-size:.76rem;color:var(--dim);line-height:1.55}
+    /* Media */
+    #media{background:var(--cream)}
+    .media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.1rem}
+    .mc{border:1px solid var(--rule);border-radius:7px;overflow:hidden;background:#fff;transition:box-shadow .25s,transform .25s}
+    .mc:hover{box-shadow:0 5px 22px rgba(26,74,110,0.1);transform:translateY(-2px)}
+    .mc-top{height:5px;background:linear-gradient(90deg,var(--ocean),var(--teal))}
+    .mc-top.gold-top{background:linear-gradient(90deg,var(--gold),#e8b84b)}
+    .mc-body{padding:1.1rem 1.3rem}
+    .mc-src{font-family:'DM Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.45rem}
+    .mc-src.g{color:var(--gold)}
+    .mc-body h4{font-size:.85rem;font-weight:500;color:var(--ink);line-height:1.45;margin-bottom:.55rem}
+    .mc-link{font-size:.73rem;font-weight:500;color:var(--sky);text-decoration:none}
+    .mc-link:hover{text-decoration:underline}
+    /* Portals */
+    #portals{background:var(--deep)}
+    #portals .section-title{color:#fff}
+    #portals .section-label{color:var(--sky)}
+    .port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem}
+    .port-card{border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:1.6rem;background:rgba(255,255,255,0.04);transition:background .25s,border-color .25s;text-decoration:none}
+    .port-card:hover{background:rgba(255,255,255,0.09);border-color:rgba(77,166,200,0.5)}
+    .port-icon{font-size:1.7rem;margin-bottom:.8rem}
+    .port-card h4{font-size:.92rem;font-weight:500;color:#fff;margin-bottom:.35rem}
+    .port-card p{font-size:.76rem;color:var(--foam);line-height:1.6;opacity:.72}
+    .port-arr{margin-top:.8rem;font-size:.71rem;color:var(--sky)}
+    /* Service */
+    #misc{background:var(--paper)}
+    .misc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.8rem}
+    .misc-h{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--ocean);margin-bottom:1rem}
+    .misc-list{list-style:none}
+    .misc-list li{font-size:.78rem;color:#253545;line-height:1.5;padding:.28rem 0;border-bottom:1px solid var(--rule);display:flex;gap:.45rem}
+    .misc-list li::before{content:'·';color:var(--teal);flex-shrink:0}
+    /* Contact */
+    #contact{background:var(--cream)}
+    .con-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+    .con-info p{font-size:.88rem;line-height:1.8;color:#253545;margin-bottom:1.5rem}
+    .con-detail{display:flex;align-items:center;gap:.75rem;padding:.8rem 1rem;background:#fff;border:1px solid var(--rule);border-radius:6px;margin-bottom:.65rem;text-decoration:none;color:var(--ink);transition:border-color .2s,background .2s}
+    .con-detail:hover{border-color:var(--teal);background:rgba(14,124,123,0.04)}
+    .con-icon{font-size:.95rem;color:var(--ocean)}
+    .con-text p{font-size:.78rem;font-weight:500}
+    .con-text small{font-size:.7rem;color:var(--dim)}
+    .social-wrap{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.5rem}
+    .soc-btn{display:inline-flex;padding:.48rem .88rem;font-size:.71rem;font-weight:500;letter-spacing:.06em;border:1px solid var(--rule);border-radius:4px;color:var(--ocean);text-decoration:none;transition:all .2s}
+    .soc-btn:hover{background:var(--ocean);color:#fff;border-color:var(--ocean)}
+    footer{background:var(--ink);color:rgba(255,255,255,0.38);text-align:center;padding:1.8rem;font-size:.73rem;line-height:1.8}
+    footer a{color:var(--sky);text-decoration:none}
+    /* Animations */
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+    /* Mobile */
+    @media(max-width:900px){
+      nav{padding:0 1.5rem}
+      .nav-links{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--paper);padding:1.4rem;gap:.9rem;border-bottom:1px solid var(--rule)}
+      .nav-links.open{display:flex}
+      .nav-toggle{display:flex}
+      #hero{grid-template-columns:1fr}
+      .hero-left{padding:7rem 2rem 3.5rem}
+      .hero-left::after{display:none}
+      .hero-right{padding:3rem 2rem 4rem}
+      .tl-grid,.misc-grid,.con-grid{grid-template-columns:1fr;gap:2rem}
+      section{padding:4rem 0}
     }
-
-    /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--paper); }
-    ::-webkit-scrollbar-thumb { background: var(--ocean); border-radius: 4px; }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 3rem;
-      height: 64px;
-      background: rgba(244,241,235,0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--rule);
-    }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--ocean);
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--dim);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--ocean); }
-
-    /* hamburger */
-    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ocean); transition: 0.3s; }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-left {
-      background: var(--deep);
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 8rem 4rem 6rem 5rem;
-      position: relative;
-    }
-    .hero-left::after {
-      content: '';
-      position: absolute; right: -1px; top: 0; bottom: 0; width: 60px;
-      background: var(--cream);
-      clip-path: polygon(100% 0, 100% 100%, 0 100%);
-    }
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sky);
-      margin-bottom: 1.8rem;
-    }
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 5vw, 5rem);
-      font-weight: 300;
-      line-height: 1.05;
-      color: #fff;
-      margin-bottom: 0.3rem;
-    }
-    .hero-name em {
-      font-style: italic;
-      color: var(--sky);
-    }
-    .hero-title {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: var(--foam);
-      margin: 1.4rem 0 2.4rem;
-      line-height: 1.7;
-      max-width: 380px;
-    }
-    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem; }
-    .tag {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      padding: 0.3rem 0.8rem;
-      border: 1px solid rgba(77,166,200,0.4);
-      border-radius: 2px;
-      color: var(--sky);
-      background: rgba(77,166,200,0.07);
-    }
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.65rem 1.4rem;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: all 0.25s;
-      cursor: pointer;
-    }
-    .btn-primary { background: var(--teal); color: #fff; }
-    .btn-primary:hover { background: #0a5f5e; }
-    .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: #fff; }
-    .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
-
-    .hero-right {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 8rem 5rem 6rem 6rem;
-      position: relative;
-    }
-    /* animated water waves svg bg */
-    .hero-right::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 80% 20%, rgba(13,123,123,0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 80%, rgba(26,74,110,0.05) 0%, transparent 50%);
-    }
-    .stat-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.5rem; margin-bottom: 3rem;
-    }
-    .stat-card {
-      border: 1px solid var(--rule);
-      border-radius: 6px;
-      padding: 1.4rem 1.6rem;
-      background: rgba(255,255,255,0.6);
-      transition: box-shadow 0.25s, transform 0.25s;
-    }
-    .stat-card:hover { box-shadow: 0 4px 24px rgba(26,74,110,0.1); transform: translateY(-2px); }
-    .stat-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem;
-      font-weight: 300;
-      color: var(--ocean);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--dim);
-      margin-top: 0.4rem;
-    }
-    .affiliation {
-      display: flex; align-items: flex-start; gap: 1rem;
-      padding: 1.2rem 1.4rem;
-      background: var(--ocean);
-      border-radius: 6px;
-      color: #fff;
-    }
-    .affiliation-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
-    .affiliation-text p { font-size: 0.9rem; font-weight: 500; }
-    .affiliation-text small { font-size: 0.76rem; color: var(--foam); opacity: 0.8; }
-
-    /* ── WAVE DIVIDER ── */
-    .wave-div { line-height: 0; }
-    .wave-div svg { display: block; }
-
-    /* ── SECTION BASE ── */
-    section { padding: 6rem 0; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-    .section-head { margin-bottom: 3.5rem; }
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--teal);
-      display: flex; align-items: center; gap: 0.6rem;
-      margin-bottom: 0.6rem;
-    }
-    .section-label::after {
-      content: ''; flex: 1 0 30px; height: 1px; background: var(--teal); opacity: 0.4; max-width: 60px;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400;
-      color: var(--ink);
-      line-height: 1.15;
-    }
-
-    /* ── ABOUT ── */
-    #about { background: var(--cream); }
-    .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 5rem; align-items: start; }
-    .about-body p {
-      font-size: 1.05rem;
-      line-height: 1.85;
-      color: #2a3a4a;
-      margin-bottom: 1.4rem;
-    }
-    .about-body p:last-child { margin-bottom: 0; }
-    .skills-panel h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 1.2rem;
-      color: var(--ocean);
-    }
-    .skill-item {
-      margin-bottom: 1rem;
-    }
-    .skill-name {
-      display: flex; justify-content: space-between;
-      font-size: 0.8rem; font-weight: 500; margin-bottom: 0.4rem;
-      color: var(--ink);
-    }
-    .skill-bar {
-      height: 3px; background: var(--rule); border-radius: 2px; overflow: hidden;
-    }
-    .skill-bar-fill {
-      height: 100%; background: linear-gradient(90deg, var(--ocean), var(--teal));
-      border-radius: 2px;
-      animation: fillBar 1.6s ease forwards;
-      transform-origin: left;
-    }
-    @keyframes fillBar { from { width: 0; } }
-
-    /* ── EDUCATION & EXPERIENCE ── */
-    #timeline { background: var(--paper); }
-    .timeline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-    .timeline-col h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; font-weight: 500;
-      color: var(--ocean); margin-bottom: 2rem;
-    }
-    .timeline-item {
-      position: relative; padding-left: 1.6rem; margin-bottom: 2rem;
-      border-left: 2px solid var(--rule);
-      padding-bottom: 0.4rem;
-    }
-    .timeline-item::before {
-      content: ''; position: absolute;
-      left: -5px; top: 6px;
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--teal);
-      border: 2px solid var(--paper);
-    }
-    .tl-period {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.67rem; color: var(--teal);
-      letter-spacing: 0.1em; margin-bottom: 0.25rem;
-    }
-    .tl-role { font-size: 0.95rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
-    .tl-org { font-size: 0.82rem; color: var(--ocean); font-weight: 400; margin-bottom: 0.5rem; }
-    .tl-desc { font-size: 0.82rem; color: var(--dim); line-height: 1.6; }
-
-    /* ── PUBLICATIONS ── */
-    #publications { background: var(--cream); }
-    .pub-tabs { display: flex; gap: 0; margin-bottom: 2.5rem; border-bottom: 1px solid var(--rule); }
-    .pub-tab {
-      padding: 0.6rem 1.4rem;
-      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
-      text-transform: uppercase; cursor: pointer;
-      border-bottom: 2px solid transparent;
-      color: var(--dim); margin-bottom: -1px;
-      transition: all 0.2s;
-    }
-    .pub-tab.active { color: var(--ocean); border-bottom-color: var(--ocean); }
-    .pub-list { display: none; }
-    .pub-list.active { display: block; }
-    .pub-item {
-      display: flex; gap: 1.2rem; align-items: flex-start;
-      padding: 1.4rem 0;
-      border-bottom: 1px solid var(--rule);
-      transition: background 0.2s;
-    }
-    .pub-item:last-child { border-bottom: none; }
-    .pub-num {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem; color: var(--teal);
-      flex-shrink: 0; width: 28px; padding-top: 3px;
-      text-align: right;
-    }
-    .pub-content { flex: 1; }
-    .pub-title { font-size: 0.9rem; font-weight: 500; color: var(--ink); line-height: 1.5; margin-bottom: 0.4rem; }
-    .pub-authors { font-size: 0.78rem; color: var(--dim); margin-bottom: 0.3rem; }
-    .pub-authors strong { color: var(--ocean); }
-    .pub-journal { font-size: 0.76rem; color: var(--teal); font-style: italic; }
-    .pub-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.5rem; }
-    .badge {
-      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.06em;
-      padding: 0.2rem 0.55rem; border-radius: 2px;
-      background: rgba(14,124,123,0.1); color: var(--teal); border: 1px solid rgba(14,124,123,0.25);
-    }
-    .badge.gold { background: rgba(197,151,58,0.1); color: var(--gold); border-color: rgba(197,151,58,0.3); }
-    .badge.blue { background: rgba(26,74,110,0.1); color: var(--ocean); border-color: rgba(26,74,110,0.25); }
-
-    /* ── AWARDS ── */
-    #awards { background: var(--paper); }
-    .awards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }
-    .award-card {
-      padding: 1.4rem 1.6rem;
-      background: var(--cream);
-      border: 1px solid var(--rule);
-      border-radius: 6px;
-      display: flex; gap: 1rem; align-items: flex-start;
-      transition: box-shadow 0.25s, transform 0.25s;
-    }
-    .award-card:hover { box-shadow: 0 6px 24px rgba(26,74,110,0.1); transform: translateY(-2px); }
-    .award-icon { font-size: 1.4rem; flex-shrink: 0; }
-    .award-text p { font-size: 0.84rem; font-weight: 500; color: var(--ink); line-height: 1.5; }
-    .award-text small { font-size: 0.72rem; color: var(--dim); }
-
-    /* ── RESEARCH ── */
-    #research { background: var(--cream); }
-    .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.4rem; }
-    .research-card {
-      border-radius: 8px; overflow: hidden;
-      border: 1px solid var(--rule);
-      background: #fff;
-      transition: box-shadow 0.25s, transform 0.25s;
-    }
-    .research-card:hover { box-shadow: 0 8px 32px rgba(26,74,110,0.12); transform: translateY(-3px); }
-    .research-card-header {
-      height: 80px;
-      background: linear-gradient(135deg, var(--deep), var(--ocean));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
-    }
-    .research-card-body { padding: 1.2rem 1.4rem; }
-    .research-card-body h4 { font-size: 0.9rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
-    .research-card-body p { font-size: 0.78rem; color: var(--dim); line-height: 1.6; }
-
-    /* ── PORTALS ── */
-    #portals { background: var(--deep); }
-    #portals .section-title { color: #fff; }
-    #portals .section-label { color: var(--sky); }
-    .portals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.4rem; }
-    .portal-card {
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px; padding: 2rem;
-      background: rgba(255,255,255,0.04);
-      transition: background 0.25s, border-color 0.25s;
-      text-decoration: none;
-    }
-    .portal-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(77,166,200,0.5); }
-    .portal-card-icon { font-size: 2rem; margin-bottom: 1rem; }
-    .portal-card h4 { font-size: 1rem; font-weight: 500; color: #fff; margin-bottom: 0.5rem; }
-    .portal-card p { font-size: 0.8rem; color: var(--foam); line-height: 1.6; opacity: 0.75; }
-    .portal-arrow { margin-top: 1rem; font-size: 0.75rem; color: var(--sky); letter-spacing: 0.05em; }
-
-    /* ── CONTACT ── */
-    #contact { background: var(--paper); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
-    .contact-info p { font-size: 0.95rem; line-height: 1.8; color: #2a3a4a; margin-bottom: 2rem; }
-    .contact-detail {
-      display: flex; align-items: center; gap: 0.8rem;
-      padding: 0.9rem 1.2rem;
-      background: var(--cream);
-      border: 1px solid var(--rule);
-      border-radius: 6px; margin-bottom: 0.8rem;
-      text-decoration: none; color: var(--ink);
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .contact-detail:hover { border-color: var(--teal); background: rgba(14,124,123,0.04); }
-    .contact-detail-icon { font-size: 1rem; color: var(--ocean); }
-    .contact-detail-text p { font-size: 0.8rem; font-weight: 500; }
-    .contact-detail-text small { font-size: 0.73rem; color: var(--dim); }
-    .social-links { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.8rem; }
-    .social-btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.55rem 1rem;
-      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em;
-      border: 1px solid var(--rule); border-radius: 4px;
-      color: var(--ocean); text-decoration: none;
-      transition: all 0.2s;
-    }
-    .social-btn:hover { background: var(--ocean); color: #fff; border-color: var(--ocean); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink); color: rgba(255,255,255,0.4);
-      text-align: center; padding: 2rem;
-      font-size: 0.75rem; line-height: 1.8;
-    }
-    footer a { color: var(--sky); text-decoration: none; }
-
-    /* ── ANIMATIONS ── */
-    .fade-up {
-      opacity: 0; transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── MOBILE ── */
-    @media (max-width: 900px) {
-      nav { padding: 0 1.5rem; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0;
-        background: var(--paper); padding: 1.5rem; gap: 1rem; border-bottom: 1px solid var(--rule); }
-      .nav-links.open { display: flex; }
-      .nav-toggle { display: flex; }
-
-      #hero { grid-template-columns: 1fr; }
-      .hero-left { padding: 7rem 2rem 4rem; }
-      .hero-left::after { display: none; }
-      .hero-right { padding: 3rem 2rem 4rem; }
-      .stat-grid { grid-template-columns: 1fr 1fr; }
-
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .timeline-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-
-      section { padding: 4rem 0; }
-    }
-
-    @media (max-width: 480px) {
-      .stat-grid { grid-template-columns: 1fr; }
-      .hero-name { font-size: 2.6rem; }
-    }
+    @media(max-width:480px){.hero-name{font-size:2.5rem}.hero-stats{gap:1rem}}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#hero">Anuj P Kushwaha</a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
     <li><a href="#timeline">Education</a></li>
     <li><a href="#publications">Publications</a></li>
-    <li><a href="#awards">Awards</a></li>
+    <li><a href="#media">Media</a></li>
     <li><a href="#portals">Portals</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+  <div class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
     <span></span><span></span><span></span>
   </div>
 </nav>
@@ -482,15 +207,20 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow">IIT Gandhinagar · Water &amp; Climate Lab</p>
+    <p class="hero-eyebrow">
+      <a href="https://www.iitgn.ac.in" target="_blank" rel="noopener">IIT Gandhinagar</a>
+      <span class="sep">·</span>
+      <a href="https://vmishra.people.iitgn.ac.in/water&climate/" target="_blank" rel="noopener">Water &amp; Climate Lab</a>
+    </p>
     <h1 class="hero-name">Anuj <em>P.</em><br/>Kushwaha</h1>
-    <p class="hero-title">Earth Scientist &amp; Hydrologist working at the intersection of large-scale hydrological modelling, remote sensing, and climate change impacts on Indian river basins.</p>
+    <p class="hero-sub">PhD Scholar · Earth Science · CGPA 10/10</p>
     <div class="hero-tags">
       <span class="tag">Hydrological Modelling</span>
       <span class="tag">Climate Change</span>
       <span class="tag">Remote Sensing</span>
       <span class="tag">GIS</span>
       <span class="tag">Compound Events</span>
+      <span class="tag">Water Resources</span>
     </div>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#publications">View Publications</a>
@@ -499,179 +229,85 @@
   </div>
 
   <div class="hero-right">
-    <div class="stat-grid fade-up">
-      <div class="stat-card">
-        <div class="stat-number">14</div>
-        <div class="stat-label">Journal Papers</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">12</div>
-        <div class="stat-label">Conferences</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">18</div>
-        <div class="stat-label">River Basins</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">5+</div>
-        <div class="stat-label">Years Research</div>
+    <div class="hero-profile fade-up">
+      <!--
+        HOW TO ADD YOUR PHOTO:
+        1. Upload photo.jpg (or photo.png) to the same GitHub repo folder as index.html
+        2. Replace the letter "A" below with: <img src="photo.jpg" alt="Anuj P Kushwaha"/>
+      -->
+      <div class="hero-photo">A</div>
+      <div>
+        <div class="hero-profile-name">Anuj Prakash Kushwaha</div>
+        <div class="hero-profile-sub">Research Scholar · Dept. of Earth Science<br/>AB-4/326, IIT Gandhinagar, Gujarat</div>
       </div>
     </div>
-    <div class="affiliation fade-up">
-      <div class="affiliation-icon">🎓</div>
-      <div class="affiliation-text">
-        <p>PhD Scholar — IIT Gandhinagar</p>
-        <small>Supervisor: Prof. Vimal Mishra · Water &amp; Climate Lab</small>
-      </div>
+
+    <div class="about-body fade-up">
+      <p>I am an Earth Science researcher at the intersection of water resources and sustainable development. My work uses <strong>multi-hydrological modelling</strong> and hydrometeorological analysis — integrating observed, satellite, and reanalysis data — to understand hydrological processes shaped by climate change and human activities.</p>
+      <p>I employ models including <strong>VIC, CLM, Noah-MP, CWatM</strong> and <strong>H08</strong> to quantify the human footprint of irrigation, groundwater abstraction, and reservoir operations on Indian river basins. I have also contributed high-resolution datasets including the <em>Drought Atlas of India</em> and <em>INDmet</em>.</p>
+      <p style="font-size:.8rem;color:var(--dim)">Supervisor: <strong>Prof. Vimal Mishra</strong> · Expected submission: April 2026</p>
+    </div>
+
+    <div class="hero-stats fade-up">
+      <div class="mini-stat"><div class="num">14</div><div class="lbl">Journal Papers</div></div>
+      <div class="mini-stat"><div class="num">12</div><div class="lbl">Conferences</div></div>
+      <div class="mini-stat"><div class="num">18</div><div class="lbl">River Basins</div></div>
+      <div class="mini-stat"><div class="num">10/10</div><div class="lbl">PhD CGPA</div></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- RESEARCH INTERESTS & SKILLS -->
+<section id="research">
   <div class="container">
     <div class="section-head fade-up">
-      <div class="section-label">01 — About</div>
-      <h2 class="section-title">About Me</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-body fade-up">
-        <p>I am a Ph.D. scholar at the Indian Institute of Technology (IIT) Gandhinagar, working under the supervision of Prof. Vimal Mishra at the Water and Climate Lab. As an Earth Scientist and Hydrologist, my research lies at the intersection of multi-hydrological modelling, remote sensing &amp; GIS, compound &amp; extreme events, and climate change.</p>
-        <p>My current work focuses on quantifying the human footprint — specifically intensive irrigation, groundwater abstraction, and reservoir operations — on the terrestrial water cycle using robust multi-model frameworks including <strong>VIC, CLM, Noah-MP, CWatM,</strong> and <strong>H08</strong>, integrated with satellite observations.</p>
-        <p>Prior to my doctoral studies, I worked as a Geoinformatics Engineer at the <strong>Space Applications Centre (SAC-ISRO)</strong>, contributing to the National Wetland Inventory &amp; Assessment (NWIA-II). I have also contributed to high-resolution hydroclimatic datasets including the <em>Drought Atlas of India</em> and the <em>INDmet</em> precipitation and temperature products.</p>
-      </div>
-      <div class="skills-panel fade-up">
-        <h3>Technical Expertise</h3>
-        <div class="skill-item">
-          <div class="skill-name"><span>Hydrological Modelling</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name"><span>Remote Sensing &amp; GIS</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name"><span>Climate Data Analysis</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name"><span>MATLAB / Python</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name"><span>NetCDF / Geospatial Data</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:87%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name"><span>Scientific Writing</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESEARCH INTERESTS -->
-<section id="research" style="background:var(--paper); padding: 5rem 0;">
-  <div class="container">
-    <div class="section-head fade-up">
-      <div class="section-label">02 — Focus Areas</div>
-      <h2 class="section-title">Research Interests</h2>
+      <div class="section-label">01 — Focus Areas</div>
+      <h2 class="section-title">Research Interests &amp; Skills</h2>
     </div>
     <div class="research-grid">
-      <div class="research-card fade-up">
-        <div class="research-card-header">🌊</div>
-        <div class="research-card-body">
-          <h4>Multi-Hydrological Modelling</h4>
-          <p>Employing VIC, CLM, Noah-MP, CWatM, and H08 for large-scale water budget assessment and model inter-comparison across Indian river basins.</p>
-        </div>
-      </div>
-      <div class="research-card fade-up">
-        <div class="research-card-header">🌡️</div>
-        <div class="research-card-body">
-          <h4>Hydrology &amp; Climate Change</h4>
-          <p>Assessing the impact of warming scenarios and changing precipitation patterns on the Indian terrestrial water cycle and river streamflow.</p>
-        </div>
-      </div>
-      <div class="research-card fade-up">
-        <div class="research-card-header">⚡</div>
-        <div class="research-card-body">
-          <h4>Compound &amp; Extreme Events</h4>
-          <p>Analysing co-occurring droughts and floods, their land–atmospheric drivers, and cascading hydrological implications at basin scale.</p>
-        </div>
-      </div>
-      <div class="research-card fade-up">
-        <div class="research-card-header">🛰️</div>
-        <div class="research-card-body">
-          <h4>Remote Sensing &amp; GIS</h4>
-          <p>Integrating multi-source satellite data (MODIS, scatterometers) with ground observations for water-level estimation and wetland assessment.</p>
-        </div>
+      <div class="rc fade-up"><div class="rc-top">🌊</div><div class="rc-body"><h4>Multi-Hydrological Modelling</h4><p>VIC, CLM, Noah-MP, CWatM, H08, SWAT for large-scale water-budget assessment across Indian river basins.</p></div></div>
+      <div class="rc fade-up"><div class="rc-top">🌡️</div><div class="rc-body"><h4>Hydrology &amp; Climate Change</h4><p>Warming scenario impacts on the terrestrial water cycle, streamflow, and drought/flood frequency under SSP scenarios.</p></div></div>
+      <div class="rc fade-up"><div class="rc-top">⚡</div><div class="rc-body"><h4>Compound &amp; Extreme Events</h4><p>Co-occurring droughts and floods, land–atmospheric drivers, and cascading basin-scale hydrological implications.</p></div></div>
+      <div class="rc fade-up"><div class="rc-top">🛰️</div><div class="rc-body"><h4>Remote Sensing &amp; GIS</h4><p>MODIS, SAR, scatterometers integrated with ground observations for water-level estimation and wetland assessment.</p></div></div>
+      <div class="rc fade-up"><div class="rc-top">💧</div><div class="rc-body"><h4>Human Intervention Analysis</h4><p>Quantifying irrigation, groundwater abstraction, and reservoir operations on the Indian terrestrial water cycle.</p></div></div>
+      <div class="rc fade-up"><div class="rc-top">📊</div><div class="rc-body"><h4>Hydrometeorology &amp; Big Data</h4><p>High-resolution dataset development (INDmet, Drought Atlas), NetCDF/HDF handling, and reanalysis data integration.</p></div></div>
+    </div>
+
+    <div class="skills-wrap fade-up">
+      <h3>Technical Skills</h3>
+      <div class="skill-groups">
+        <div><div class="sg-label">Programming</div><div class="sg-tags"><span class="sg-tag">MATLAB</span><span class="sg-tag">Python</span><span class="sg-tag">R</span><span class="sg-tag">LaTeX / Beamer</span></div></div>
+        <div><div class="sg-label">Hydrological Models</div><div class="sg-tags"><span class="sg-tag">VIC</span><span class="sg-tag">CLM</span><span class="sg-tag">Noah-MP</span><span class="sg-tag">CWatM</span><span class="sg-tag">H08</span><span class="sg-tag">SWAT</span><span class="sg-tag">HEC-RAS 2D</span></div></div>
+        <div><div class="sg-label">Remote Sensing &amp; GIS</div><div class="sg-tags"><span class="sg-tag">ArcGIS</span><span class="sg-tag">QGIS</span><span class="sg-tag">ENVI</span><span class="sg-tag">ERDAS</span><span class="sg-tag">SNAP</span><span class="sg-tag">Google Earth Engine</span></div></div>
+        <div><div class="sg-label">Data &amp; OS</div><div class="sg-tags"><span class="sg-tag">NetCDF</span><span class="sg-tag">CDO</span><span class="sg-tag">Big Data Analysis</span><span class="sg-tag">Linux</span><span class="sg-tag">Inkscape</span><span class="sg-tag">MS Word</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION + EXPERIENCE -->
+<!-- EDUCATION & EXPERIENCE -->
 <section id="timeline">
   <div class="container">
     <div class="section-head fade-up">
-      <div class="section-label">03 — Background</div>
+      <div class="section-label">02 — Background</div>
       <h2 class="section-title">Education &amp; Experience</h2>
     </div>
-    <div class="timeline-grid">
+    <div class="tl-grid">
       <div class="fade-up">
-        <h3>Education</h3>
-        <div class="timeline-item">
-          <div class="tl-period">2021 – Present</div>
-          <div class="tl-role">Ph.D. in Earth Science &amp; Civil Engineering</div>
-          <div class="tl-org">Indian Institute of Technology Gandhinagar</div>
-          <div class="tl-desc">Multi-model hydrological modelling, water-budget assessment, and human influences on Indian river basins. Advisor: Dr. Vimal Mishra.</div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-period">2013 – 2018</div>
-          <div class="tl-role">Integrated M.Tech in Geoinformatics Engineering</div>
-          <div class="tl-org">Central University of Jharkhand, Ranchi</div>
-          <div class="tl-desc">Thesis: Water Level Estimation using C &amp; Ku band Scatterometer. Advisor: Dr. Vimal Mishra.</div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-period">2010 &amp; 2012</div>
-          <div class="tl-role">Secondary &amp; Higher Secondary</div>
-          <div class="tl-org">Government City Inter College, Ghazipur, U.P.</div>
-        </div>
+        <h3 class="tl-col">Education</h3>
+        <div class="tl-item"><div class="tl-period">2021 – Present</div><div class="tl-role">Ph.D. in Earth Science &amp; Civil Engineering</div><div class="tl-org">IIT Gandhinagar · CGPA: 10/10</div><div class="tl-desc">Large-scale multi-hydrological modelling, water-budget assessment, and human influences on Indian river basins. Advisor: Dr. Vimal Mishra. Expected submission: April 2026.</div></div>
+        <div class="tl-item"><div class="tl-period">2013 – 2018</div><div class="tl-role">Integrated M.Tech in Geoinformatics Engineering</div><div class="tl-org">Central University of Jharkhand, Ranchi · CGPA: 8.55/10</div><div class="tl-desc">Thesis: Water Level Estimation using C &amp; Ku band Scatterometer.</div></div>
+        <div class="tl-item"><div class="tl-period">2010 &amp; 2012</div><div class="tl-role">Secondary &amp; Higher Secondary</div><div class="tl-org">Government City Inter College, Ghazipur, U.P.</div></div>
+        <h3 class="tl-col sub">Teaching</h3>
+        <div class="tl-item"><div class="tl-period">2021 – 2023</div><div class="tl-role">Teaching Assistant</div><div class="tl-org">IIT Gandhinagar</div><div class="tl-desc">Geospatial Engineering (CE 303), Field Survey Project (CE 309), Microwave Remote Sensing (EH 691-III).</div></div>
       </div>
-
       <div class="fade-up">
-        <h3>Experience</h3>
-        <div class="timeline-item">
-          <div class="tl-period">2019 – 2020</div>
-          <div class="tl-role">Junior Research Fellow</div>
-          <div class="tl-org">IIT Gandhinagar</div>
-          <div class="tl-desc">Development of multiple hydrological modelling frameworks for Indian basins.</div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-period">2018 – 2019</div>
-          <div class="tl-role">Geoinformatics Engineer</div>
-          <div class="tl-org">Space Application Centre (SAC-ISRO), Ahmedabad</div>
-          <div class="tl-desc">National Wetland Inventory &amp; Assessment II (NWIA II); automated GIS tool development and pan-India quality-check team.</div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-period">2017 – 2018</div>
-          <div class="tl-role">Research Trainee</div>
-          <div class="tl-org">Space Application Centre (SAC-ISRO), Ahmedabad</div>
-          <div class="tl-desc">River water level estimation using C and Ku-band scatterometers; sensitivity analysis during flood scenarios.</div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-period">2016</div>
-          <div class="tl-role">Summer Research Intern</div>
-          <div class="tl-org">Central Ground Water Board (CGWB), Ranchi</div>
-          <div class="tl-desc">Groundwater recharge management plan using geospatial and hydrological techniques for Jharkhand.</div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-period">2015</div>
-          <div class="tl-role">Summer Research Intern</div>
-          <div class="tl-org">Aryabhata Geo-Informatics &amp; Space Application Centre (AGi-SAC), Shimla</div>
-          <div class="tl-desc">Advanced GIS mapping of Palampur town for tourist guide and spatial map development.</div>
-        </div>
+        <h3 class="tl-col">Experience</h3>
+        <div class="tl-item"><div class="tl-period">2019 – 2020</div><div class="tl-role">Junior Research Fellow</div><div class="tl-org">IIT Gandhinagar</div><div class="tl-desc">Development of multiple hydrological modelling frameworks for Indian basins.</div></div>
+        <div class="tl-item"><div class="tl-period">2018 – 2019</div><div class="tl-role">Geoinformatics Engineer</div><div class="tl-org">Space Application Centre (SAC-ISRO), Ahmedabad</div><div class="tl-desc">National Wetland Inventory &amp; Assessment II (NWIA-II); automated GIS tool development; pan-India quality-check team.</div></div>
+        <div class="tl-item"><div class="tl-period">2017 – 2018</div><div class="tl-role">Research Trainee</div><div class="tl-org">Space Application Centre (SAC-ISRO), Ahmedabad</div><div class="tl-desc">River water level estimation using C and Ku-band scatterometers; sensitivity analysis during flood scenarios.</div></div>
+        <div class="tl-item"><div class="tl-period">May – Jun 2016</div><div class="tl-role">Summer Research Intern</div><div class="tl-org">Central Ground Water Board (CGWB), Ranchi</div><div class="tl-desc">Groundwater recharge management plan for Jharkhand using geospatial and hydrological techniques.</div></div>
+        <div class="tl-item"><div class="tl-period">May – Jun 2015</div><div class="tl-role">Summer Research Intern</div><div class="tl-org">Aryabhata Geo-Informatics &amp; Space Application Centre (AGi-SAC), Shimla</div><div class="tl-desc">Advanced GIS mapping of Palampur town for tourist guide and detailed spatial maps.</div></div>
       </div>
     </div>
   </div>
@@ -681,269 +317,43 @@
 <section id="publications">
   <div class="container">
     <div class="section-head fade-up">
-      <div class="section-label">04 — Research Output</div>
+      <div class="section-label">03 — Research Output</div>
       <h2 class="section-title">Publications</h2>
     </div>
     <div class="pub-tabs">
-      <div class="pub-tab active" onclick="showTab('journals', this)">Journal Articles (14)</div>
-      <div class="pub-tab" onclick="showTab('conferences', this)">Conference Papers (12)</div>
+      <div class="pub-tab active" onclick="showTab('journals',this)">Journal Articles (14)</div>
+      <div class="pub-tab" onclick="showTab('conferences',this)">Conference Papers (12)</div>
     </div>
-
     <div class="pub-list active" id="journals">
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J14</div>
-        <div class="pub-content">
-          <div class="pub-title">Human-induced Evapotranspiration in Indian Subcontinental River Basins</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div>
-          <div class="pub-journal">JGR: Atmosphere · 2026</div>
-          <div class="pub-badges"><span class="badge">Under Review</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J13</div>
-        <div class="pub-content">
-          <div class="pub-title">INDmet: A High-Resolution (0.05°) Daily Precipitation and Temperature Dataset for India</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Chuphal, D.S., and Mishra, V.</div>
-          <div class="pub-journal">Scientific Data · 2026</div>
-          <div class="pub-badges"><span class="badge">Revision Submitted</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J12</div>
-        <div class="pub-content">
-          <div class="pub-title">Development of High-Resolution Soil Moisture Product for India, 1981–2024</div>
-          <div class="pub-authors">Chuphal, D.S., Abishek, A., <strong>Kushwaha, A.P.</strong>, Vangala, G., and Mishra, V.</div>
-          <div class="pub-journal">Scientific Data · 2026</div>
-          <div class="pub-badges"><span class="badge">Revision Submitted</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J11</div>
-        <div class="pub-content">
-          <div class="pub-title">Land and Atmospheric Drivers of the 2023 Flood in India</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Solanki, H., Vegad, U., Mahto, S.S., and Mishra, V.</div>
-          <div class="pub-journal">Earth and Space Science, Vol. 11(10), e2024EA003750 · 2025</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.1029/2024EA003750</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J10</div>
-        <div class="pub-content">
-          <div class="pub-title">Development of Multimodel-based Hydrologic Outlook for India</div>
-          <div class="pub-authors">Tiwari, A.D., <strong>Kushwaha, A.P.</strong>, Sahai, A.K., and Mishra, V.</div>
-          <div class="pub-journal">Journal of Hydrometeorology, Vol. 26(3) · 2025</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.1175/JHM-D-23-0186.1</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J9</div>
-        <div class="pub-content">
-          <div class="pub-title">Improving Streamflow Prediction using Multiple Hydrological Models and Machine Learning Methods</div>
-          <div class="pub-authors">Solanki, H., Vegad, U., <strong>Kushwaha, A.P.</strong>, and Mishra, V.</div>
-          <div class="pub-journal">Water Resources Research, Vol. 61(1), e2024WR038192 · 2025</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.1029/2024WR0381921</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J8</div>
-        <div class="pub-content">
-          <div class="pub-title">Dominance of Soil Moisture over Aridity in Explaining Vegetation Greenness across Global Drylands</div>
-          <div class="pub-authors">Tripathi, I.M., Mahto, S.S., <strong>Kushwaha, A.P.</strong>, Kumar, R., et al.</div>
-          <div class="pub-journal">Science of The Total Environment, Vol. 917, 170482 · 2024</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.1016/j.scitotenv.2024</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J7</div>
-        <div class="pub-content">
-          <div class="pub-title">Drought Atlas of India, 1901–2020</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Chuphal, D.S., Aadhar, S., and Mishra, V.</div>
-          <div class="pub-journal">Scientific Data, Vol. 11(1), 7 · 2024</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.1038/s41597-023-02856-y</span><span class="badge">Shared First Author</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J6</div>
-        <div class="pub-content">
-          <div class="pub-title">The Pakistan Flood of August 2022: Causes and Implications</div>
-          <div class="pub-authors">Nanditha, J.S., <strong>Kushwaha, A.P.</strong>, Singh, R., Malik, I., et al.</div>
-          <div class="pub-journal">Earth's Future, Vol. 11(3), e2022EF003230 · 2024</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.1029/2022EF003230</span><span class="badge gold">🏆 Most Cited Paper</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J5</div>
-        <div class="pub-content">
-          <div class="pub-title">Sensitivity Analysis of C &amp; Ku-band Scatterometers for River Water Level Estimation</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Gupta, P.K., Pradhan, R., and Pandey, A.C.</div>
-          <div class="pub-journal">IEEE Transactions on Geoscience and Remote Sensing, Vol. 60 · 2022</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.1109/TGRS.2022.3187173</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J4</div>
-        <div class="pub-content">
-          <div class="pub-title">Multimodel Assessment of Water Budget in Indian Sub-continental River Basins</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Tiwari, A.D., Dangar, S., Shah, H., Mahto, S.S., and Mishra, V.</div>
-          <div class="pub-journal">Journal of Hydrology, Vol. 603, 126977 · 2021</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.1016/j.jhydrol.2021.126977</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J3</div>
-        <div class="pub-content">
-          <div class="pub-title">Assessment of Runoff Pattern and Relationship to Sediment Yield of Bhagirathi-Alaknanda River Basin</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Pandey, A.C., and Mahto, S.S.</div>
-          <div class="pub-journal">Journal of Geovisualization and Spatial Analysis, Vol. 2(9) · 2018</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.1007/s41651-018-0016-8</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J2</div>
-        <div class="pub-content">
-          <div class="pub-title">Inter-seasonal Surface Water Level Fluctuation of Lonar Crater Lake using Multi-temporal Satellite Dataset</div>
-          <div class="pub-authors">Mahto, S.S., and <strong>Kushwaha, A.P.</strong></div>
-          <div class="pub-journal">American Journal of Remote Sensing, Vol. 6(1) · 2018</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.11648/j.ajrs.20180601.12</span></div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">J1</div>
-        <div class="pub-content">
-          <div class="pub-title">Feasibility of Artificial Groundwater Recharge Structures for Urban and Rural Environment of Ranchi</div>
-          <div class="pub-authors">Mahto, S.S., and <strong>Kushwaha, A.P.</strong></div>
-          <div class="pub-journal">Hydrospatial Analysis, Vol. 2 · 2018</div>
-          <div class="pub-badges"><span class="badge blue">DOI: 10.21523/gcj3.18020103</span></div>
-        </div>
-      </div>
-
-    </div><!-- /journals -->
-
+      <div class="pub-item fade-up"><div class="pub-num">J14</div><div><div class="pub-title">Human-induced Evapotranspiration in Indian Subcontinental River Basins</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">JGR: Atmospheres · 2026</div><div class="pub-badges"><span class="badge">Under Review</span><span class="badge blue">MS: 2025JD046274</span></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J13</div><div><div class="pub-title">INDmet: A High-Resolution (0.05°) Daily Precipitation and Temperature Dataset for India</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Chuphal, D.S., and Mishra, V.</div><div class="pub-journal">Scientific Data · 2026</div><div class="pub-badges"><span class="badge">Revision Submitted</span></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J12</div><div><div class="pub-title">Development of High-Resolution Soil Moisture Product for India, 1981–2024</div><div class="pub-authors">Chuphal, D.S., Abishek, A., <strong>Kushwaha, A.P.</strong>, Vangala, G., and Mishra, V.</div><div class="pub-journal">Scientific Data · 2026</div><div class="pub-badges"><span class="badge">Revision Submitted</span></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J11</div><div><div class="pub-title">Land and Atmospheric Drivers of the 2023 Flood in India</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Solanki, H., Vegad, U., Mahto, S.S., and Mishra, V.</div><div class="pub-journal">Earth and Space Science, Vol. 11(10), e2024EA003750 · 2025</div><div class="pub-badges"><span class="badge blue">DOI: 10.1029/2024EA003750</span><a class="pub-pdf" href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003750" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J10</div><div><div class="pub-title">Development of Multimodel-based Hydrologic Outlook for India</div><div class="pub-authors">Tiwari, A.D., <strong>Kushwaha, A.P.</strong>, Sahai, A.K., and Mishra, V.</div><div class="pub-journal">Journal of Hydrometeorology, Vol. 26(3) · 2025</div><div class="pub-badges"><span class="badge blue">DOI: 10.1175/JHM-D-23-0186.1</span><a class="pub-pdf" href="https://journals.ametsoc.org/view/journals/hydr/aop/JHM-D-23-0186.1/JHM-D-23-0186.1.xml" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J9</div><div><div class="pub-title">Improving Streamflow Prediction using Multiple Hydrological Models and Machine Learning Methods</div><div class="pub-authors">Solanki, H., Vegad, U., <strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">Water Resources Research, Vol. 61(1) · 2025</div><div class="pub-badges"><span class="badge blue">DOI: 10.1029/2024WR038192</span><a class="pub-pdf" href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR038192" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J8</div><div><div class="pub-title">Dominance of Soil Moisture over Aridity in Explaining Vegetation Greenness across Global Drylands</div><div class="pub-authors">Tripathi, I.M., Mahto, S.S., <strong>Kushwaha, A.P.</strong>, Kumar, R., et al.</div><div class="pub-journal">Science of The Total Environment, Vol. 917, 170482 · 2024</div><div class="pub-badges"><span class="badge blue">DOI: 10.1016/j.scitotenv.2024</span><a class="pub-pdf" href="https://www.sciencedirect.com/science/article/pii/S0048969724006193" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J7</div><div><div class="pub-title">Drought Atlas of India, 1901–2020</div><div class="pub-authors"><strong>Kushwaha, A.P.*</strong>, Chuphal, D.S., Aadhar, S., and Mishra, V.</div><div class="pub-journal">Scientific Data, Vol. 11(1), 7 · 2024</div><div class="pub-badges"><span class="badge blue">DOI: 10.1038/s41597-023-02856-y</span><span class="badge">* Shared First Author</span><a class="pub-pdf" href="https://www.nature.com/articles/s41597-023-02856-y" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J6</div><div><div class="pub-title">The Pakistan Flood of August 2022: Causes and Implications</div><div class="pub-authors">Nanditha, J.S., <strong>Kushwaha, A.P.</strong>, Singh, R., Malik, I., et al.</div><div class="pub-journal">Earth's Future, Vol. 11(3), e2022EF003230 · 2024</div><div class="pub-badges"><span class="badge blue">DOI: 10.1029/2022EF003230</span><span class="badge gold">🏆 Most Cited Paper Award</span><a class="pub-pdf" href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2022EF003230" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J5</div><div><div class="pub-title">Sensitivity Analysis of C &amp; Ku-band Scatterometers for River Water Level Estimation</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Gupta, P.K., Pradhan, R., and Pandey, A.C.</div><div class="pub-journal">IEEE Transactions on Geoscience and Remote Sensing, Vol. 60 · 2022</div><div class="pub-badges"><span class="badge blue">DOI: 10.1109/TGRS.2022.3187173</span><a class="pub-pdf" href="https://ieeexplore.ieee.org/document/9810303" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J4</div><div><div class="pub-title">Multimodel Assessment of Water Budget in Indian Sub-continental River Basins</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Tiwari, A.D., Dangar, S., Shah, H., Mahto, S.S., and Mishra, V.</div><div class="pub-journal">Journal of Hydrology, Vol. 603, 126977 · 2021</div><div class="pub-badges"><span class="badge blue">DOI: 10.1016/j.jhydrol.2021.126977</span><a class="pub-pdf" href="https://www.sciencedirect.com/science/article/pii/S0022169421010271" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J3</div><div><div class="pub-title">Assessment of Runoff Pattern and Relationship to Sediment Yield of Bhagirathi-Alaknanda River Basin</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Pandey, A.C., and Mahto, S.S.</div><div class="pub-journal">Journal of Geovisualization and Spatial Analysis, Vol. 2(9) · 2018</div><div class="pub-badges"><span class="badge blue">DOI: 10.1007/s41651-018-0016-8</span><a class="pub-pdf" href="https://link.springer.com/article/10.1007/s41651-018-0016-8" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J2</div><div><div class="pub-title">Inter-seasonal Surface Water Level Fluctuation of Lonar Crater Lake using Multi-temporal Satellite Dataset</div><div class="pub-authors">Mahto, S.S., and <strong>Kushwaha, A.P.</strong></div><div class="pub-journal">American Journal of Remote Sensing, Vol. 6(1) · 2018</div><div class="pub-badges"><span class="badge blue">DOI: 10.11648/j.ajrs.20180601.12</span></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J1</div><div><div class="pub-title">Feasibility of Artificial Groundwater Recharge Structures for Urban and Rural Environment of Ranchi</div><div class="pub-authors">Mahto, S.S., and <strong>Kushwaha, A.P.</strong></div><div class="pub-journal">Hydrospatial Analysis, Vol. 2 · 2018</div><div class="pub-badges"><span class="badge blue">DOI: 10.21523/gcj3.18020103</span></div></div></div>
+    </div>
     <div class="pub-list" id="conferences">
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C12</div>
-        <div class="pub-content">
-          <div class="pub-title">Assessing Sectoral Water Demands and Identifying Water Stress Hotspots in Indian River Basins</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div>
-          <div class="pub-journal">American Geophysical Union (AGU) · 2025</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C11</div>
-        <div class="pub-content">
-          <div class="pub-title">Multimodel Assessment of Water Budget in Indian Subcontinental River Basins</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div>
-          <div class="pub-journal">Advancing Land Modeling for Gulf Coast Resilience, University of Texas at Austin · 2025</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C10</div>
-        <div class="pub-content">
-          <div class="pub-title">Assessing the Geomorphic Response and Sensitivity of a Himalayan River to Climate Change and Anthropogenic Pressures</div>
-          <div class="pub-authors">Karnatak, N., Shalini, S., <strong>Kushwaha, A.P.</strong>, et al.</div>
-          <div class="pub-journal">I.S. Rivers 2025, Lyon, France · 2025</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C9</div>
-        <div class="pub-content">
-          <div class="pub-title">High-Resolution Water Budget Estimates for the Indian Subcontinental River Basins</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div>
-          <div class="pub-journal">American Geophysical Union (AGU) · 2024</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C8</div>
-        <div class="pub-content">
-          <div class="pub-title">Multi-model Based Probabilistic Flood Forecast System for Brahmaputra River Basin</div>
-          <div class="pub-authors">Mishra, V., Vegad, U., <strong>Kushwaha, A.P.</strong>, et al.</div>
-          <div class="pub-journal">American Geophysical Union (AGU) · 2024</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C7</div>
-        <div class="pub-content">
-          <div class="pub-title">Advancing Hydrological Modeling for Detailed Water Budget Assessment in Indian River Basins</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div>
-          <div class="pub-journal">European Geosciences Union (EGU) · 2024</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C6</div>
-        <div class="pub-content">
-          <div class="pub-title">Compound Impact of Human Interventions and Warming Climate in Hydrological Estimates for Indian Basins</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div>
-          <div class="pub-journal">American Geophysical Union (AGU) · 2023</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C5</div>
-        <div class="pub-content">
-          <div class="pub-title">Enhancing Flood Forecasting Accuracy through Multi-Model Ensemble Projections and Machine Learning</div>
-          <div class="pub-authors">Vegad, U., Solanki, H., <strong>Kushwaha, A.P.</strong>, and Mishra, V.</div>
-          <div class="pub-journal">American Geophysical Union (AGU) · 2023</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C4</div>
-        <div class="pub-content">
-          <div class="pub-title">Multimodel-based Hydrological Sensitivity Analysis in Indian River Basins</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div>
-          <div class="pub-journal">American Geophysical Union (AGU) · 2022</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C3</div>
-        <div class="pub-content">
-          <div class="pub-title">The Pakistan Flood of August 2022: Causes and Implications</div>
-          <div class="pub-authors">Nanditha, J.S., <strong>Kushwaha, A.P.</strong>, Singh, R., et al.</div>
-          <div class="pub-journal">American Geophysical Union (AGU) · 2022</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C2</div>
-        <div class="pub-content">
-          <div class="pub-title">Multimodel Ensemble Flood Forecast in Narmada River Basin</div>
-          <div class="pub-authors">Mishra, V., Tiwari, A.D., <strong>Kushwaha, A.P.</strong>, et al.</div>
-          <div class="pub-journal">American Geophysical Union (AGU) · 2021</div>
-        </div>
-      </div>
-
-      <div class="pub-item fade-up">
-        <div class="pub-num">C1</div>
-        <div class="pub-content">
-          <div class="pub-title">Occurrence of Contrasting Dry and Wet Extremes in the Course of Sub-monthly Time Scale</div>
-          <div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Mahto, S.S., and Mishra, V.</div>
-          <div class="pub-journal">American Geophysical Union (AGU) · 2021</div>
-        </div>
-      </div>
-
-    </div><!-- /conferences -->
+      <div class="pub-item fade-up"><div class="pub-num">C12</div><div><div class="pub-title">Assessing Sectoral Water Demands and Identifying Water Stress Hotspots in Indian River Basins</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">AGU Fall Meeting, USA · 2025</div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C11</div><div><div class="pub-title">Multimodel Assessment of Water Budget in Indian Subcontinental River Basins (lightning talk)</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">Advancing Land Modeling, University of Texas at Austin · 2025</div><div class="pub-badges"><a class="pub-pdf" href="https://landmodelling.github.io/#posters" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C10</div><div><div class="pub-title">Assessing the Geomorphic Response and Sensitivity of a Himalayan River to Climate Change and Anthropogenic Pressures</div><div class="pub-authors">Karnatak, N., Shalini, S., <strong>Kushwaha, A.P.</strong>, et al.</div><div class="pub-journal">I.S. Rivers 2025, Lyon, France · 2025</div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C9</div><div><div class="pub-title">High-Resolution Water Budget Estimates for the Indian Subcontinental River Basins</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">AGU Fall Meeting, USA · 2024</div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C8</div><div><div class="pub-title">Multi-model Based Probabilistic Flood Forecast System for Brahmaputra River Basin</div><div class="pub-authors">Mishra, V., Vegad, U., <strong>Kushwaha, A.P.</strong>, et al.</div><div class="pub-journal">AGU Fall Meeting, USA · 2024</div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C7</div><div><div class="pub-title">Advancing Hydrological Modeling for Detailed Water Budget Assessment in Indian River Basins</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">European Geosciences Union (EGU), Vienna · 2024</div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C6</div><div><div class="pub-title">Compound Impact of Human Interventions and Warming Climate in Hydrological Estimates for Indian Basins</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">AGU Fall Meeting, USA · 2023</div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C5</div><div><div class="pub-title">Enhancing Flood Forecasting Accuracy through Multi-Model Ensemble Projections and Machine Learning</div><div class="pub-authors">Vegad, U., Solanki, H., <strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">AGU Fall Meeting, USA · 2023</div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C4</div><div><div class="pub-title">Multimodel-based Hydrological Sensitivity Analysis in Indian River Basins</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">AGU Fall Meeting, USA · 2022</div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C3</div><div><div class="pub-title">The Pakistan Flood of August 2022: Causes and Implications</div><div class="pub-authors">Nanditha, J.S., <strong>Kushwaha, A.P.</strong>, et al.</div><div class="pub-journal">AGU Fall Meeting, USA · 2022</div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C2</div><div><div class="pub-title">Multimodel Ensemble Flood Forecast in Narmada River Basin</div><div class="pub-authors">Mishra, V., Tiwari, A.D., <strong>Kushwaha, A.P.</strong>, et al.</div><div class="pub-journal">AGU Fall Meeting, USA · 2021</div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">C1</div><div><div class="pub-title">Occurrence of Contrasting Dry and Wet Extremes in the Course of Sub-monthly Time Scale</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Mahto, S.S., and Mishra, V.</div><div class="pub-journal">AGU Fall Meeting, USA · 2021</div></div></div>
+    </div>
   </div>
 </section>
 
@@ -951,46 +361,55 @@
 <section id="awards">
   <div class="container">
     <div class="section-head fade-up">
-      <div class="section-label">05 — Recognition</div>
+      <div class="section-label">04 — Recognition</div>
       <h2 class="section-title">Awards &amp; Achievements</h2>
     </div>
-    <div class="awards-grid">
-      <div class="award-card fade-up">
-        <div class="award-icon">✈️</div>
-        <div class="award-text"><p>DST-SERB Travel Grant Awardee — AGU Fall Meeting</p><small>2023</small></div>
-      </div>
-      <div class="award-card fade-up">
-        <div class="award-icon">🎖️</div>
-        <div class="award-text"><p>DST Fellowship Recipient for PhD at IIT Gandhinagar</p><small>2021 – Present</small></div>
-      </div>
-      <div class="award-card fade-up">
-        <div class="award-icon">🎓</div>
-        <div class="award-text"><p>Certificate in Teaching — IIT Gandhinagar</p><small>Dec. 2023</small></div>
-      </div>
-      <div class="award-card fade-up">
-        <div class="award-icon">✍️</div>
-        <div class="award-text"><p>Certificate in Scientific Writing — IIT Gandhinagar</p><small>Dec. 2021</small></div>
-      </div>
-      <div class="award-card fade-up">
-        <div class="award-icon">🏫</div>
-        <div class="award-text"><p>Conducted 5-day Hydrological Forecast Workshop (VIC model + CaMA-Flood) at ACIWRM, Bangalore</p><small>2025</small></div>
-      </div>
-      <div class="award-card fade-up">
-        <div class="award-icon">🗓️</div>
-        <div class="award-text"><p>Organizing Committee Member — 21-Day Summer School in Geospatial Science &amp; Technology (DST-funded)</p><small>2024</small></div>
-      </div>
-      <div class="award-card fade-up">
-        <div class="award-icon">🛰️</div>
-        <div class="award-text"><p>M.Tech Dissertation Project Fellow at ISRO Ahmedabad</p><small>2017</small></div>
-      </div>
-      <div class="award-card fade-up">
-        <div class="award-icon">📜</div>
-        <div class="award-text"><p>National Talent Search Exam (NTSE) Scholarship — NCERT</p><small>2008 – 2012</small></div>
-      </div>
-      <div class="award-card fade-up">
-        <div class="award-icon">🏅</div>
-        <div class="award-text"><p>National Player (Captain, U-19) — Tug of War, Uttar Pradesh State Team</p><small>2013</small></div>
-      </div>
+    <div class="aw-grid">
+      <div class="aw-card fade-up"><div class="aw-icon">✈️</div><div class="aw-text"><p>IIT Gandhinagar International Travel Grant — AGU</p><small>2023 &amp; 2024</small></div></div>
+      <div class="aw-card fade-up"><div class="aw-icon">🏆</div><div class="aw-text"><p>DST-SERB Travel Grant Awardee — AGU Fall Meeting</p><small>2023</small></div></div>
+      <div class="aw-card fade-up"><div class="aw-icon">🎖️</div><div class="aw-text"><p>DST Fellowship for PhD at IIT Gandhinagar</p><small>2021 – Present</small></div></div>
+      <div class="aw-card fade-up"><div class="aw-icon">🏫</div><div class="aw-text"><p>Conducted 5-day Hydrological Forecast Workshop (VIC + CaMA-Flood) at ACIWRM, Bangalore</p><small>2025</small></div></div>
+      <div class="aw-card fade-up"><div class="aw-icon">🗓️</div><div class="aw-text"><p>Organizing Committee — 21-Day DST Summer School in Geospatial Science &amp; Technology</p><small>2024</small></div></div>
+      <div class="aw-card fade-up"><div class="aw-icon">🎓</div><div class="aw-text"><p>Certificate in Teaching — IIT Gandhinagar</p><small>Dec. 2023</small></div></div>
+      <div class="aw-card fade-up"><div class="aw-icon">✍️</div><div class="aw-text"><p>Certificate in Scientific Writing — IIT Gandhinagar</p><small>Dec. 2021</small></div></div>
+      <div class="aw-card fade-up"><div class="aw-icon">🛰️</div><div class="aw-text"><p>M.Tech Dissertation Project Fellow — ISRO Ahmedabad</p><small>2017</small></div></div>
+      <div class="aw-card fade-up"><div class="aw-icon">📜</div><div class="aw-text"><p>National Talent Search Exam (NTSE) Scholarship — NCERT</p><small>2008 – 2012</small></div></div>
+      <div class="aw-card fade-up"><div class="aw-icon">🏅</div><div class="aw-text"><p>National Player (Captain, U-19) — Tug of War, Uttar Pradesh State Team</p><small>2013</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">05 — Funded Work</div>
+      <h2 class="section-title">Research &amp; Consulting Projects</h2>
+    </div>
+    <div class="fade-up">
+      <div class="proj-item"><h4>National Wetland Inventory and Assessment (NWIA-II)</h4><p>PI: Dr. Praveen K. Gupta · Space Applications Centre, SAC-ISRO. Data analysis, modelling, and pan-India wetland geospatial dataset validation.</p></div>
+      <div class="proj-item"><h4>Impacts of Climate Variability and Change on Water Resources in the Sabarmati River Basin</h4><p>PI: Dr. Vimal Mishra · Ministry of Water Resources (MoWR). Hydrological sensitivity to climate forcing in a key Indian river basin.</p></div>
+      <div class="proj-item"><h4>Assessment of Climate Change over Water Resources in the Indian Region</h4><p>PI: Dr. Vimal Mishra · Ministry of Earth Sciences (MoES). Large-scale multi-model assessment of climate change impacts on Indian water resources.</p></div>
+      <div class="proj-item"><h4>Gujarat State Action Plan on Climate Change</h4><p>PI: Dr. Vimal Mishra · Government of Gujarat. State-level climate impact assessment and water resources planning.</p></div>
+      <div class="proj-item"><h4>Real-time 2D Flood Inundation Forecasting for the Brahmaputra River Basin</h4><p>PI: Dr. Vimal Mishra · Ministry of Earth Sciences (MoES). Hydrologic-hydrodynamic and statistical dynamical approaches for operational flood forecasting.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA COVERAGE -->
+<section id="media">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">06 — Research Impact</div>
+      <h2 class="section-title">Media Coverage &amp; Impact</h2>
+    </div>
+    <div class="media-grid">
+      <div class="mc fade-up"><div class="mc-top"></div><div class="mc-body"><div class="mc-src">DownToEarth</div><h4>Drought Atlas of India coverage — "Dry Spread"</h4><a class="mc-link" href="https://www.downtoearth.org.in/climate-change/dry-spread-94284" target="_blank" rel="noopener">Read Article ↗</a></div></div>
+      <div class="mc fade-up"><div class="mc-top"></div><div class="mc-body"><div class="mc-src">Mongabay India</div><h4>How droughts and worsening soil health can increase carbon emissions</h4><a class="mc-link" href="https://india.mongabay.com/2024/06/how-droughts-and-worsening-soil-health-can-increase-carbon-emissions/" target="_blank" rel="noopener">Read Article ↗</a></div></div>
+      <div class="mc fade-up"><div class="mc-top"></div><div class="mc-body"><div class="mc-src">India Today</div><h4>Climate change to spur extreme weather events in India — IIT Gandhinagar study</h4><a class="mc-link" href="https://www.indiatoday.in/education-today/news/story/climate-change-to-spur-many-extreme-weather-events-in-india-iit-gandhinagar-study-2299244-2022-11-19" target="_blank" rel="noopener">Read Article ↗</a></div></div>
+      <div class="mc fade-up"><div class="mc-top"></div><div class="mc-body"><div class="mc-src">NewsRX LLC</div><h4>Pakistan Flood 2022 study — Climate change and extreme events in South Asia</h4><a class="mc-link" href="https://go.gale.com/ps/i.do?id=GALE%7CA768107450&sid=sitemap&v=2.1&it=r&p=AONE&sw=w" target="_blank" rel="noopener">Read Article ↗</a></div></div>
+      <div class="mc fade-up"><div class="mc-top gold-top"></div><div class="mc-body"><div class="mc-src g">🌐 Portal Released</div><h4>Experimental Flood Inundation Forecast Portal — Brahmaputra River Basin</h4><a class="mc-link" href="https://sites.google.com/iitgn.ac.in/brahmaputra-forecast-portal" target="_blank" rel="noopener">Visit Portal ↗</a></div></div>
+      <div class="mc fade-up"><div class="mc-top gold-top"></div><div class="mc-body"><div class="mc-src g">🌐 Portal Released</div><h4>Taluka Level Drought Atlas Web-Portal — indiadroughtatlas.in</h4><a class="mc-link" href="https://indiadroughtatlas.in/#/" target="_blank" rel="noopener">Visit Portal ↗</a></div></div>
     </div>
   </div>
 </section>
@@ -999,28 +418,61 @@
 <section id="portals">
   <div class="container">
     <div class="section-head fade-up">
-      <div class="section-label">06 — Tools &amp; Data</div>
+      <div class="section-label">07 — Open Data</div>
       <h2 class="section-title">Published Data &amp; Portals</h2>
     </div>
-    <div class="portals-grid">
-      <a class="portal-card fade-up" href="https://indiadroughtatlas.in/#/" target="_blank" rel="noopener">
-        <div class="portal-card-icon">🗺️</div>
-        <h4>Drought Atlas of India</h4>
-        <p>Taluka-level drought data and interactive geo-web portal covering 1901–2020. Featured in DownToEarth and MONGABAY.</p>
-        <div class="portal-arrow">Explore Portal →</div>
-      </a>
-      <a class="portal-card fade-up" href="https://sites.google.com/iitgn.ac.in/brahmaputra-forecast-portal" target="_blank" rel="noopener">
-        <div class="portal-card-icon">🌊</div>
-        <h4>Brahmaputra Forecast Portal</h4>
-        <p>Experimental flood inundation forecast system for the Brahmaputra river basin using multi-model ensemble approaches.</p>
-        <div class="portal-arrow">Explore Portal →</div>
-      </a>
-      <a class="portal-card fade-up" href="https://zenodo.org/records/8280551" target="_blank" rel="noopener">
-        <div class="portal-card-icon">📦</div>
-        <h4>High-Resolution Drought Dataset</h4>
-        <p>Open-access drought data for India (1901–2020) hosted on Zenodo. Supporting the Drought Atlas of India publication.</p>
-        <div class="portal-arrow">Download Dataset →</div>
-      </a>
+    <div class="port-grid">
+      <a class="port-card fade-up" href="https://indiadroughtatlas.in/#/" target="_blank" rel="noopener"><div class="port-icon">🗺️</div><h4>Drought Atlas of India</h4><p>Taluka-level interactive geo-web portal — 1901–2020 drought data. Featured in DownToEarth &amp; Mongabay.</p><div class="port-arr">Explore Portal →</div></a>
+      <a class="port-card fade-up" href="https://sites.google.com/iitgn.ac.in/brahmaputra-forecast-portal" target="_blank" rel="noopener"><div class="port-icon">🌊</div><h4>Brahmaputra Forecast Portal</h4><p>Real-time 2D flood inundation forecast system for the Brahmaputra river basin.</p><div class="port-arr">Explore Portal →</div></a>
+      <a class="port-card fade-up" href="https://doi.org/10.5281/zenodo.8280551" target="_blank" rel="noopener"><div class="port-icon">📦</div><h4>Drought Atlas Dataset</h4><p>High-resolution drought data for India (1901–2020) on Zenodo.</p><div class="port-arr">Download Dataset →</div></a>
+      <a class="port-card fade-up" href="https://doi.org/10.5281/zenodo.15430548" target="_blank" rel="noopener"><div class="port-icon">🌧️</div><h4>INDmet Dataset</h4><p>High-resolution (0.05°) daily precipitation &amp; temperature dataset for India on Zenodo.</p><div class="port-arr">Download Dataset →</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL SERVICE -->
+<section id="misc">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">08 — Service</div>
+      <h2 class="section-title">Professional Service</h2>
+    </div>
+    <div class="misc-grid">
+      <div class="fade-up">
+        <div class="misc-h">Peer Reviewer</div>
+        <ul class="misc-list">
+          <li>JGR: Atmospheres (AGU)</li>
+          <li>Scientific Data (Nature)</li>
+          <li>Frontiers in Water</li>
+          <li>Environmental Modelling &amp; Software (Elsevier)</li>
+          <li>Environmental Monitoring &amp; Assessment (Springer)</li>
+          <li>Theoretical and Applied Climatology (Springer)</li>
+          <li>Discover Water / Sustainability / Environment / Geoscience (Springer)</li>
+        </ul>
+      </div>
+      <div class="fade-up">
+        <div class="misc-h">Professional Affiliations</div>
+        <ul class="misc-list">
+          <li>American Geophysical Union (AGU) — Student Member</li>
+          <li>European Geosciences Union (EGU) — Student Member</li>
+          <li>IEEE Geoscience &amp; Remote Sensing Society — Student Member</li>
+          <li>Indian Society of Geomatics (ISG) — Student Member</li>
+          <li>Indian Meteorological Society (IMS) — Lifetime Member</li>
+          <li>Tug-of-war Federation of India — Lifetime Member</li>
+        </ul>
+      </div>
+      <div class="fade-up">
+        <div class="misc-h">Positions &amp; Leadership</div>
+        <ul class="misc-list">
+          <li>Convenor/Secretary — Green Club, IITGN (2024–2025)</li>
+          <li>Secretary — Earthwise Society, IITGN (2023–2024)</li>
+          <li>Founding Member — Earthwise Society, IITGN (2023)</li>
+          <li>Editorial Head — Anveshnam Research Society, IITGN (2022–2023)</li>
+          <li>Invited Speaker — Govt. Engineering College, Bharuch (2025)</li>
+          <li>Resource Person — DST Summer School, IITGN (2024)</li>
+          <li>Hands-on Trainer — SAC-ISRO TREES trainees (2019)</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -1029,106 +481,76 @@
 <section id="contact">
   <div class="container">
     <div class="section-head fade-up">
-      <div class="section-label">07 — Connect</div>
+      <div class="section-label">09 — Connect</div>
       <h2 class="section-title">Contact</h2>
     </div>
-    <div class="contact-grid">
-      <div class="contact-info fade-up">
-        <p>I am open to collaborations, research discussions, and opportunities in the areas of hydrological modelling, climate data analysis, and water resources science. Feel free to reach out!</p>
-        <a class="contact-detail" href="https://vmishra.people.iitgn.ac.in/water&climate/" target="_blank" rel="noopener">
-          <span class="contact-detail-icon">🏛️</span>
-          <div class="contact-detail-text">
-            <p>Water &amp; Climate Lab</p>
-            <small>IIT Gandhinagar · Prof. Vimal Mishra's Group</small>
-          </div>
-        </a>
-        <div class="contact-detail">
-          <span class="contact-detail-icon">📍</span>
-          <div class="contact-detail-text">
-            <p>AB-4/326, IIT Gandhinagar</p>
-            <small>Palaj, Gandhinagar, Gujarat, India — PIN 382355</small>
-          </div>
-        </div>
-        <div class="social-links">
-          <a class="social-btn" href="https://www.researchgate.net/profile/Anuj-Kushwaha-2" target="_blank" rel="noopener">ResearchGate</a>
-          <a class="social-btn" href="https://scholar.google.co.in/citations?user=jX2zFiAAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
-          <a class="social-btn" href="https://orcid.org/0000-0003-3722-5249" target="_blank" rel="noopener">ORCID</a>
-          <a class="social-btn" href="https://www.linkedin.com/in/anuj-prakash-kushwaha-525082114/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="social-btn" href="https://twitter.com/anujprakash08" target="_blank" rel="noopener">Twitter / X</a>
+    <div class="con-grid">
+      <div class="con-info fade-up">
+        <p>Open to collaborations, research discussions, and opportunities in hydrological modelling, climate data analysis, and water resources science.</p>
+        <a class="con-detail" href="mailto:anuj.k@iitgn.ac.in"><span class="con-icon">✉️</span><div class="con-text"><p>anuj.k@iitgn.ac.in</p><small>Work Email</small></div></a>
+        <a class="con-detail" href="mailto:anujkushwaha97@gmail.com"><span class="con-icon">📧</span><div class="con-text"><p>anujkushwaha97@gmail.com</p><small>Personal Email</small></div></a>
+        <div class="con-detail"><span class="con-icon">📍</span><div class="con-text"><p>AB-4/326, IIT Gandhinagar</p><small>Palaj, Gandhinagar, Gujarat, India — PIN 382355</small></div></div>
+        <a class="con-detail" href="https://vmishra.people.iitgn.ac.in/water&climate/" target="_blank" rel="noopener"><span class="con-icon">🏛️</span><div class="con-text"><p>Water &amp; Climate Lab</p><small>Prof. Vimal Mishra · IIT Gandhinagar</small></div></a>
+        <div class="social-wrap">
+          <a class="soc-btn" href="https://scholar.google.com/citations?user=Q0fVOp4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="soc-btn" href="https://www.researchgate.net/profile/Anuj-Kushwaha-2" target="_blank" rel="noopener">ResearchGate</a>
+          <a class="soc-btn" href="https://orcid.org/0000-0003-3722-5249" target="_blank" rel="noopener">ORCID</a>
+          <a class="soc-btn" href="https://www.scopus.com/authid/detail.uri?authorId=57223018535" target="_blank" rel="noopener">Scopus</a>
+          <a class="soc-btn" href="https://www.linkedin.com/in/anuj-prakash-kushwaha-525082114/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="soc-btn" href="https://twitter.com/anujprakash08" target="_blank" rel="noopener">Twitter / X</a>
         </div>
       </div>
-
-      <div class="fade-up" style="display:flex;flex-direction:column;gap:1rem;">
-        <div style="padding:2rem;background:var(--cream);border:1px solid var(--rule);border-radius:8px;">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--ocean);margin-bottom:1.2rem;">Academic Profiles</div>
-          <a class="contact-detail" href="https://scholar.google.co.in/citations?user=jX2zFiAAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" style="margin-bottom:0.6rem;">
-            <span class="contact-detail-icon">📚</span>
-            <div class="contact-detail-text"><p>Google Scholar</p><small>Citations &amp; h-index</small></div>
-          </a>
-          <a class="contact-detail" href="https://www.researchgate.net/profile/Anuj-Kushwaha-2" target="_blank" rel="noopener" style="margin-bottom:0.6rem;">
-            <span class="contact-detail-icon">🔬</span>
-            <div class="contact-detail-text"><p>ResearchGate</p><small>Full research profile</small></div>
-          </a>
-          <a class="contact-detail" href="https://orcid.org/0000-0003-3722-5249" target="_blank" rel="noopener" style="margin-bottom:0;">
-            <span class="contact-detail-icon">🆔</span>
-            <div class="contact-detail-text"><p>ORCID: 0000-0003-3722-5249</p><small>Persistent researcher identifier</small></div>
-          </a>
+      <div class="fade-up" style="display:flex;flex-direction:column;gap:.9rem">
+        <div style="padding:1.6rem;background:#fff;border:1px solid var(--rule);border-radius:8px">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;color:var(--ocean);margin-bottom:.9rem">Academic Profiles</div>
+          <a class="con-detail" href="https://scholar.google.com/citations?user=Q0fVOp4AAAAJ&hl=en" target="_blank" rel="noopener" style="margin-bottom:.55rem"><span class="con-icon">📚</span><div class="con-text"><p>Google Scholar</p><small>Citations &amp; h-index</small></div></a>
+          <a class="con-detail" href="https://www.researchgate.net/profile/Anuj-Kushwaha-2" target="_blank" rel="noopener" style="margin-bottom:.55rem"><span class="con-icon">🔬</span><div class="con-text"><p>ResearchGate</p><small>Full research profile</small></div></a>
+          <a class="con-detail" href="https://www.scopus.com/authid/detail.uri?authorId=57223018535" target="_blank" rel="noopener" style="margin-bottom:.55rem"><span class="con-icon">🗂️</span><div class="con-text"><p>Scopus</p><small>Author ID: 57223018535</small></div></a>
+          <a class="con-detail" href="https://orcid.org/0000-0003-3722-5249" target="_blank" rel="noopener" style="margin-bottom:0"><span class="con-icon">🆔</span><div class="con-text"><p>ORCID: 0000-0003-3722-5249</p><small>Persistent researcher identifier</small></div></a>
         </div>
-
-        <div style="padding:1.4rem 1.6rem;background:var(--ocean);border-radius:8px;color:#fff;">
-          <div style="font-size:0.8rem;font-weight:500;margin-bottom:0.5rem;color:var(--foam);">LATEST PUBLICATION ALERT</div>
-          <p style="font-size:0.88rem;line-height:1.6;">Land and Atmospheric Drivers of the 2023 Flood in India — <em>Earth and Space Science</em>, 2025.</p>
-          <a href="https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2024EA003750" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.8rem;font-size:0.76rem;font-weight:500;color:var(--sky);text-decoration:none;">Read Paper →</a>
+        <div style="padding:1.3rem 1.5rem;background:var(--ocean);border-radius:8px;color:#fff">
+          <div style="font-size:.72rem;font-weight:500;margin-bottom:.45rem;color:var(--foam);letter-spacing:.08em">🔔 LATEST PUBLICATION</div>
+          <p style="font-size:.84rem;line-height:1.6;margin-bottom:.5rem">Land and Atmospheric Drivers of the 2023 Flood in India — <em>Earth and Space Science</em>, 2025</p>
+          <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003750" target="_blank" rel="noopener" style="font-size:.73rem;font-weight:500;color:var(--sky);text-decoration:none">Read Paper →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2025 Anuj P Kushwaha · IIT Gandhinagar · Water &amp; Climate Lab</p>
-  <p style="margin-top:0.3rem;">Built for GitHub Pages · <a href="https://sites.google.com/view/anuj-prakash/about-me" target="_blank" rel="noopener">Original Google Site</a></p>
+  <p>© 2025 Anuj Prakash Kushwaha · IIT Gandhinagar · Water &amp; Climate Lab</p>
+  <p style="margin-top:.3rem">
+    <a href="mailto:anuj.k@iitgn.ac.in">anuj.k@iitgn.ac.in</a> ·
+    <a href="https://sites.google.com/view/anuj-prakash/about-me" target="_blank" rel="noopener">Google Sites</a> ·
+    <a href="https://scholar.google.com/citations?user=Q0fVOp4AAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+  </p>
 </footer>
 
 <script>
-  // Tab switching
-  function showTab(id, el) {
-    document.querySelectorAll('.pub-list').forEach(l => l.classList.remove('active'));
-    document.querySelectorAll('.pub-tab').forEach(t => t.classList.remove('active'));
+  function showTab(id,el){
+    document.querySelectorAll('.pub-list').forEach(l=>l.classList.remove('active'));
+    document.querySelectorAll('.pub-tab').forEach(t=>t.classList.remove('active'));
     document.getElementById(id).classList.add('active');
     el.classList.add('active');
   }
-
-  // Scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        // stagger siblings
-        const siblings = e.target.parentElement.querySelectorAll('.fade-up');
-        siblings.forEach((s, i) => {
-          setTimeout(() => s.classList.add('visible'), i * 80);
-        });
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const sibs=e.target.parentElement.querySelectorAll('.fade-up');
+        sibs.forEach((s,i)=>setTimeout(()=>s.classList.add('visible'),i*65));
       }
     });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Active nav link
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--ocean)' : '';
+  },{threshold:.07});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+  const secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',()=>{
+    let cur='';
+    secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.getAttribute('id')});
+    document.querySelectorAll('.nav-links a').forEach(a=>{
+      a.style.color=a.getAttribute('href')==='#'+cur?'var(--ocean)':'';
     });
   });
 </script>
-
 </body>
 </html>
