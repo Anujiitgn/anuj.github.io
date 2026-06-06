@@ -14,7 +14,7 @@
       --sky:#4da6c8;--foam:#a8d8e8;--paper:#f4f1eb;--cream:#faf8f3;
       --gold:#c5973a;--dim:#5a6a7a;--rule:rgba(26,74,110,0.15);
     }
-    html{scroll-behavior:smooth}
+    html{scroll-behavior:smooth;font-size:17px}
     body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
     ::-webkit-scrollbar{width:5px}
     ::-webkit-scrollbar-track{background:var(--paper)}
@@ -52,9 +52,13 @@
     .hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
     .hero-profile-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:500;color:var(--ocean);line-height:1.2}
     .hero-profile-sub{font-size:.76rem;color:var(--dim);margin-top:.2rem;line-height:1.5}
-    .about-body p{font-size:.86rem;line-height:1.88;color:#253545;margin-bottom:.95rem}
+    .about-body p{font-size:.95rem;line-height:1.92;color:#253545;margin-bottom:.95rem}
     .about-body p:last-child{margin-bottom:0}
-    .hero-stats{display:flex;gap:1.4rem;margin-top:1.5rem;padding-top:1.3rem;border-top:1px solid var(--rule);flex-wrap:wrap}
+    .hero-social{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;padding-top:1.3rem;border-top:1px solid var(--rule)}
+    .hero-soc-btn{display:inline-flex;align-items:center;gap:.42rem;padding:.44rem .92rem;font-size:.75rem;font-weight:500;letter-spacing:.03em;color:var(--ocean);border:1px solid var(--rule);border-radius:20px;text-decoration:none;transition:all .22s;background:#fff}
+    .hero-soc-btn svg{color:var(--teal);flex-shrink:0}
+    .hero-soc-btn:hover{background:var(--ocean);color:#fff;border-color:var(--ocean);transform:translateY(-1px);box-shadow:0 3px 12px rgba(26,74,110,0.18)}
+    .hero-soc-btn:hover svg{color:#fff}
     .mini-stat .num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--ocean);line-height:1}
     .mini-stat .lbl{font-size:.64rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:.15rem}
     /* SECTIONS */
@@ -88,9 +92,9 @@
     .tl-item{position:relative;padding-left:1.5rem;margin-bottom:1.6rem;border-left:2px solid var(--rule)}
     .tl-item::before{content:'';position:absolute;left:-5px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--teal);border:2px solid var(--cream)}
     .tl-period{font-family:'DM Mono',monospace;font-size:.65rem;color:var(--teal);letter-spacing:.1em;margin-bottom:.18rem}
-    .tl-role{font-size:.9rem;font-weight:500;color:var(--ink);margin-bottom:.16rem}
-    .tl-org{font-size:.78rem;color:var(--ocean);margin-bottom:.35rem}
-    .tl-desc{font-size:.77rem;color:var(--dim);line-height:1.6}
+    .tl-role{font-size:1rem;font-weight:500;color:var(--ink);margin-bottom:.16rem}
+    .tl-org{font-size:.86rem;color:var(--ocean);margin-bottom:.35rem}
+    .tl-desc{font-size:.84rem;color:var(--dim);line-height:1.6}
     /* Publications */
     #publications{background:var(--paper)}
     .pub-tabs{display:flex;border-bottom:1px solid var(--rule);margin-bottom:1.8rem}
@@ -100,8 +104,8 @@
     .pub-item{display:flex;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--rule)}
     .pub-item:last-child{border-bottom:none}
     .pub-num{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);flex-shrink:0;width:26px;padding-top:2px;text-align:right}
-    .pub-title{font-size:.86rem;font-weight:500;color:var(--ink);line-height:1.5;margin-bottom:.3rem}
-    .pub-authors{font-size:.74rem;color:var(--dim);margin-bottom:.22rem}
+    .pub-title{font-size:.95rem;font-weight:500;color:var(--ink);line-height:1.5;margin-bottom:.3rem}
+    .pub-authors{font-size:.82rem;color:var(--dim);margin-bottom:.22rem}
     .pub-authors strong{color:var(--ocean)}
     .pub-journal{font-size:.72rem;color:var(--teal);font-style:italic}
     .pub-badges{display:flex;gap:.38rem;flex-wrap:wrap;margin-top:.4rem;align-items:center}
@@ -213,7 +217,7 @@
       <a href="https://vmishra.people.iitgn.ac.in/water&climate/" target="_blank" rel="noopener">Water &amp; Climate Lab</a>
     </p>
     <h1 class="hero-name">Anuj <em>P.</em><br/>Kushwaha</h1>
-    <p class="hero-sub">PhD Scholar · Earth Science · CGPA 10/10</p>
+    <p class="hero-sub">PhD Scholar · Earth Science · IIT Gandhinagar</p>
     <div class="hero-tags">
       <span class="tag">Hydrological Modelling</span>
       <span class="tag">Climate Change</span>
@@ -245,14 +249,34 @@
     <div class="about-body fade-up">
       <p>I am an Earth Science researcher at the intersection of water resources and sustainable development. My work uses <strong>multi-hydrological modelling</strong> and hydrometeorological analysis — integrating observed, satellite, and reanalysis data — to understand hydrological processes shaped by climate change and human activities.</p>
       <p>I employ models including <strong>VIC, CLM, Noah-MP, CWatM</strong> and <strong>H08</strong> to quantify the human footprint of irrigation, groundwater abstraction, and reservoir operations on Indian river basins. I have also contributed high-resolution datasets including the <em>Drought Atlas of India</em> and <em>INDmet</em>.</p>
-      <p style="font-size:.8rem;color:var(--dim)">Supervisor: <strong>Prof. Vimal Mishra</strong> · Expected submission: April 2026</p>
+      <p style="font-size:.85rem;color:var(--dim)">Supervisor: <strong>Prof. Vimal Mishra</strong> · <span style="color:var(--teal);font-weight:500">Thesis Submitted: April 2026</span></p>
     </div>
 
-    <div class="hero-stats fade-up">
-      <div class="mini-stat"><div class="num">14</div><div class="lbl">Journal Papers</div></div>
-      <div class="mini-stat"><div class="num">12</div><div class="lbl">Conferences</div></div>
-      <div class="mini-stat"><div class="num">18</div><div class="lbl">River Basins</div></div>
-      <div class="mini-stat"><div class="num">10/10</div><div class="lbl">PhD CGPA</div></div>
+    <div class="hero-social fade-up">
+      <a class="hero-soc-btn" href="https://scholar.google.com/citations?user=Q0fVOp4AAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+        Scholar
+      </a>
+      <a class="hero-soc-btn" href="https://www.researchgate.net/profile/Anuj-Kushwaha-2" target="_blank" rel="noopener" title="ResearchGate">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a12.49 12.49 0 0 0-.35 2.314c-.078 1.212-.113 2.989-.113 5.330 0 2.330.031 4.099.096 5.307.065 1.209.204 2.185.419 2.930.218.745.539 1.311.967 1.699.428.388.967.582 1.618.582.487 0 .945-.127 1.375-.38.430-.254.772-.573 1.026-.958.257-.384.440-.849.551-1.394.110-.546.165-1.120.165-1.722 0-.61-.032-1.142-.096-1.598-.064-.455-.19-.842-.379-1.161a1.906 1.906 0 0 0-.754-.755 2.356 2.356 0 0 0-1.141-.267c-.437 0-.824.100-1.160.300-.338.200-.609.483-.817.849l-.016-.016c.016-.207.032-.509.048-.905.013-.396.019-.820.019-1.272a22.7 22.7 0 0 0-.058-1.596 13.4 13.4 0 0 0-.192-1.427c-.094-.43-.229-.81-.404-1.142a2.67 2.67 0 0 0-.683-.810 3.093 3.093 0 0 0-.963-.49A3.972 3.972 0 0 0 14.59 8c-.615 0-1.173.131-1.671.393-.498.262-.909.640-1.232 1.133-.324.494-.565 1.085-.722 1.773C10.808 11.987 10.730 12.768 10.730 13.636c0 .886.078 1.672.234 2.357.156.687.397 1.266.72 1.737.326.470.74.829 1.244 1.078.504.248 1.089.373 1.754.373.484 0 .93-.084 1.336-.252.406-.168.762-.416 1.066-.745l.016.016c0 .296-.010.580-.031.853-.022.273-.062.520-.121.740-.06.222-.148.410-.265.562-.119.153-.275.230-.47.230-.195 0-.370-.074-.525-.22a3.04 3.04 0 0 1-.396-.538 4.143 4.143 0 0 1-.292-.721 4.875 4.875 0 0 1-.147-.839H9.995c.07.679.22 1.257.449 1.736.229.479.52.870.875 1.172.353.302.757.525 1.213.668.455.143.941.215 1.456.215.733 0 1.361-.14 1.884-.42.523-.28.950-.659 1.283-1.138.333-.479.573-1.043.722-1.690.148-.649.222-1.346.222-2.093 0-.633-.044-1.256-.132-1.869zm-5.02 4.030c.405 0 .750.094 1.034.28.284.187.505.449.665.784.159.335.270.730.333 1.184.063.454.095.944.095 1.470 0 .487-.032.938-.095 1.353-.063.415-.17.779-.317 1.091a1.989 1.989 0 0 1-.585.748c-.244.184-.542.276-.897.276-.36 0-.668-.09-.923-.271a2.024 2.024 0 0 1-.607-.729 4.14 4.14 0 0 1-.342-1.066 6.878 6.878 0 0 1-.110-1.254c0-.487.036-.941.110-1.362.073-.42.189-.786.348-1.098.160-.311.373-.555.638-.730.265-.177.578-.265.940-.265a.7.7 0 0 1-.004-.024 2.59 2.59 0 0 1-.088-.337v.949z"/></svg>
+        ResearchGate
+      </a>
+      <a class="hero-soc-btn" href="https://orcid.org/0000-0003-3722-5249" target="_blank" rel="noopener" title="ORCID">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg>
+        ORCID
+      </a>
+      <a class="hero-soc-btn" href="https://www.scopus.com/authid/detail.uri?authorId=57223018535" target="_blank" rel="noopener" title="Scopus">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        Scopus
+      </a>
+      <a class="hero-soc-btn" href="https://www.linkedin.com/in/anuj-prakash-kushwaha-525082114/" target="_blank" rel="noopener" title="LinkedIn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a class="hero-soc-btn" href="https://twitter.com/anujprakash08" target="_blank" rel="noopener" title="Twitter / X">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Twitter / X
+      </a>
     </div>
   </div>
 </section>
@@ -295,7 +319,7 @@
     <div class="tl-grid">
       <div class="fade-up">
         <h3 class="tl-col">Education</h3>
-        <div class="tl-item"><div class="tl-period">2021 – Present</div><div class="tl-role">Ph.D. in Earth Science &amp; Civil Engineering</div><div class="tl-org">IIT Gandhinagar · CGPA: 10/10</div><div class="tl-desc">Large-scale multi-hydrological modelling, water-budget assessment, and human influences on Indian river basins. Advisor: Dr. Vimal Mishra. Expected submission: April 2026.</div></div>
+        <div class="tl-item"><div class="tl-period">2021 – Present</div><div class="tl-role">Ph.D. in Earth Science &amp; Civil Engineering</div><div class="tl-org">IIT Gandhinagar · CGPA: 10/10</div><div class="tl-desc">Multimodel Assessment of Water Budget and Water Availability in the Indian Sub-Continental River Basins (using VIC, CLM, Noah-MP, CWatM, and H08 hydrological models). Advisor: Dr. Vimal Mishra. <strong style="color:var(--teal)">Thesis Submitted: April 2026.</strong></div></div>
         <div class="tl-item"><div class="tl-period">2013 – 2018</div><div class="tl-role">Integrated M.Tech in Geoinformatics Engineering</div><div class="tl-org">Central University of Jharkhand, Ranchi · CGPA: 8.55/10</div><div class="tl-desc">Thesis: Water Level Estimation using C &amp; Ku band Scatterometer.</div></div>
         <div class="tl-item"><div class="tl-period">2010 &amp; 2012</div><div class="tl-role">Secondary &amp; Higher Secondary</div><div class="tl-org">Government City Inter College, Ghazipur, U.P.</div></div>
         <h3 class="tl-col sub">Teaching</h3>
@@ -327,11 +351,11 @@
     <div class="pub-list active" id="journals">
       <div class="pub-item fade-up"><div class="pub-num">J14</div><div><div class="pub-title">Human-induced Evapotranspiration in Indian Subcontinental River Basins</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">JGR: Atmospheres · 2026</div><div class="pub-badges"><span class="badge">Under Review</span><span class="badge blue">MS: 2025JD046274</span></div></div></div>
       <div class="pub-item fade-up"><div class="pub-num">J13</div><div><div class="pub-title">INDmet: A High-Resolution (0.05°) Daily Precipitation and Temperature Dataset for India</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Chuphal, D.S., and Mishra, V.</div><div class="pub-journal">Scientific Data · 2026</div><div class="pub-badges"><span class="badge">Revision Submitted</span></div></div></div>
-      <div class="pub-item fade-up"><div class="pub-num">J12</div><div><div class="pub-title">Development of High-Resolution Soil Moisture Product for India, 1981–2024</div><div class="pub-authors">Chuphal, D.S., Abishek, A., <strong>Kushwaha, A.P.</strong>, Vangala, G., and Mishra, V.</div><div class="pub-journal">Scientific Data · 2026</div><div class="pub-badges"><span class="badge">Revision Submitted</span></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J12</div><div><div class="pub-title">Development of Gridded Root-Zone Soil Moisture Product for India, 1981–2024</div><div class="pub-authors">Chuphal, D.S., Abhishek, <strong>Kushwaha, A.P.</strong>, Vangala, G., and Mishra, V.</div><div class="pub-journal">Scientific Data, Vol. 13, 560 · 2026</div><div class="pub-badges"><span class="badge blue">DOI: 10.1038/s41597-026-06940-x</span><a class="pub-pdf" href="https://www.nature.com/articles/s41597-026-06940-x" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
       <div class="pub-item fade-up"><div class="pub-num">J11</div><div><div class="pub-title">Land and Atmospheric Drivers of the 2023 Flood in India</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Solanki, H., Vegad, U., Mahto, S.S., and Mishra, V.</div><div class="pub-journal">Earth and Space Science, Vol. 11(10), e2024EA003750 · 2025</div><div class="pub-badges"><span class="badge blue">DOI: 10.1029/2024EA003750</span><a class="pub-pdf" href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003750" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
       <div class="pub-item fade-up"><div class="pub-num">J10</div><div><div class="pub-title">Development of Multimodel-based Hydrologic Outlook for India</div><div class="pub-authors">Tiwari, A.D., <strong>Kushwaha, A.P.</strong>, Sahai, A.K., and Mishra, V.</div><div class="pub-journal">Journal of Hydrometeorology, Vol. 26(3) · 2025</div><div class="pub-badges"><span class="badge blue">DOI: 10.1175/JHM-D-23-0186.1</span><a class="pub-pdf" href="https://journals.ametsoc.org/view/journals/hydr/aop/JHM-D-23-0186.1/JHM-D-23-0186.1.xml" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
       <div class="pub-item fade-up"><div class="pub-num">J9</div><div><div class="pub-title">Improving Streamflow Prediction using Multiple Hydrological Models and Machine Learning Methods</div><div class="pub-authors">Solanki, H., Vegad, U., <strong>Kushwaha, A.P.</strong>, and Mishra, V.</div><div class="pub-journal">Water Resources Research, Vol. 61(1) · 2025</div><div class="pub-badges"><span class="badge blue">DOI: 10.1029/2024WR038192</span><a class="pub-pdf" href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR038192" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
-      <div class="pub-item fade-up"><div class="pub-num">J8</div><div><div class="pub-title">Dominance of Soil Moisture over Aridity in Explaining Vegetation Greenness across Global Drylands</div><div class="pub-authors">Tripathi, I.M., Mahto, S.S., <strong>Kushwaha, A.P.</strong>, Kumar, R., et al.</div><div class="pub-journal">Science of The Total Environment, Vol. 917, 170482 · 2024</div><div class="pub-badges"><span class="badge blue">DOI: 10.1016/j.scitotenv.2024</span><a class="pub-pdf" href="https://www.sciencedirect.com/science/article/pii/S0048969724006193" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
+      <div class="pub-item fade-up"><div class="pub-num">J8</div><div><div class="pub-title">Dominance of Soil Moisture over Aridity in Explaining Vegetation Greenness across Global Drylands</div><div class="pub-authors">Tripathi, I.M., Mahto, S.S., <strong>Kushwaha, A.P.</strong>, Kumar, R., et al.</div><div class="pub-journal">Science of The Total Environment, Vol. 917, 170482 · 2024</div><div class="pub-badges"><span class="badge blue">DOI: 10.1016/j.scitotenv.2024.170482</span><a class="pub-pdf" href="https://www.sciencedirect.com/science/article/pii/S0048969724006193" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
       <div class="pub-item fade-up"><div class="pub-num">J7</div><div><div class="pub-title">Drought Atlas of India, 1901–2020</div><div class="pub-authors"><strong>Kushwaha, A.P.*</strong>, Chuphal, D.S., Aadhar, S., and Mishra, V.</div><div class="pub-journal">Scientific Data, Vol. 11(1), 7 · 2024</div><div class="pub-badges"><span class="badge blue">DOI: 10.1038/s41597-023-02856-y</span><span class="badge">* Shared First Author</span><a class="pub-pdf" href="https://www.nature.com/articles/s41597-023-02856-y" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
       <div class="pub-item fade-up"><div class="pub-num">J6</div><div><div class="pub-title">The Pakistan Flood of August 2022: Causes and Implications</div><div class="pub-authors">Nanditha, J.S., <strong>Kushwaha, A.P.</strong>, Singh, R., Malik, I., et al.</div><div class="pub-journal">Earth's Future, Vol. 11(3), e2022EF003230 · 2024</div><div class="pub-badges"><span class="badge blue">DOI: 10.1029/2022EF003230</span><span class="badge gold">🏆 Most Cited Paper Award</span><a class="pub-pdf" href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2022EF003230" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
       <div class="pub-item fade-up"><div class="pub-num">J5</div><div><div class="pub-title">Sensitivity Analysis of C &amp; Ku-band Scatterometers for River Water Level Estimation</div><div class="pub-authors"><strong>Kushwaha, A.P.</strong>, Gupta, P.K., Pradhan, R., and Pandey, A.C.</div><div class="pub-journal">IEEE Transactions on Geoscience and Remote Sensing, Vol. 60 · 2022</div><div class="pub-badges"><span class="badge blue">DOI: 10.1109/TGRS.2022.3187173</span><a class="pub-pdf" href="https://ieeexplore.ieee.org/document/9810303" target="_blank" rel="noopener">PDF ↗</a></div></div></div>
@@ -510,8 +534,8 @@
         </div>
         <div style="padding:1.3rem 1.5rem;background:var(--ocean);border-radius:8px;color:#fff">
           <div style="font-size:.72rem;font-weight:500;margin-bottom:.45rem;color:var(--foam);letter-spacing:.08em">🔔 LATEST PUBLICATION</div>
-          <p style="font-size:.84rem;line-height:1.6;margin-bottom:.5rem">Land and Atmospheric Drivers of the 2023 Flood in India — <em>Earth and Space Science</em>, 2025</p>
-          <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003750" target="_blank" rel="noopener" style="font-size:.73rem;font-weight:500;color:var(--sky);text-decoration:none">Read Paper →</a>
+          <p style="font-size:.84rem;line-height:1.6;margin-bottom:.5rem">Development of Gridded Root-Zone Soil Moisture Product for India, 1981–2024 — <em>Scientific Data</em>, Vol. 13, 560 · 2026</p>
+          <a href="https://www.nature.com/articles/s41597-026-06940-x" target="_blank" rel="noopener" style="font-size:.73rem;font-weight:500;color:var(--sky);text-decoration:none">Read Paper →</a>
         </div>
       </div>
     </div>
@@ -522,8 +546,7 @@
   <p>© 2025 Anuj Prakash Kushwaha · IIT Gandhinagar · Water &amp; Climate Lab</p>
   <p style="margin-top:.3rem">
     <a href="mailto:anuj.k@iitgn.ac.in">anuj.k@iitgn.ac.in</a> ·
-    <a href="https://sites.google.com/view/anuj-prakash/about-me" target="_blank" rel="noopener">Google Sites</a> ·
-    <a href="https://scholar.google.com/citations?user=Q0fVOp4AAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+    <a href="https://scholar.google.com/citations?user=Q0fVOp4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
   </p>
 </footer>
 
